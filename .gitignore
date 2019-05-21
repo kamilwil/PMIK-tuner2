@@ -26,6 +26,7 @@ local.properties
 *.htm
 *.i
 *.lst
+*.list
 *.map
 *.m51
 *.m66
@@ -42,9 +43,11 @@ local.properties
 *.hex
 *.h86
 *.lib
+*.mk
 *.obj
 *.o
 *.sbr
+makefile
 
 # Build files
 # define exception below if needed
