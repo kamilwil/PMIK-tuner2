@@ -23,7 +23,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "hd44780.h"
+//#include "ffteval.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,7 +54,10 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+LCD_PCF8574_HandleTypeDef lcd;
 
+uint32_t value;
+uint16_t _value;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,6 +70,17 @@ static void MX_TIM3_Init(void);
 static void MX_ADC2_Init(void);
 static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
+
+static void LCD_Initialize(void);
+static void LCD_ShowCommand(char *command);
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if(htim->Instance == TIM3)
+	{
+		//tu przyjdzie wywolanie algorytmu FFT
+		//FFT_Test();
+	}
+}
 
 /* USER CODE END PFP */
 
@@ -110,6 +125,16 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
+  //ADC on
+  	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
+  	{
+  		Error_Handler();
+  	}
+
+  	//LCD
+  	//LCD_Initialize();
+  	//LCD_ShowCommand("Init w porzo!");
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,8 +142,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
-	  HAL_Delay(500);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -498,6 +522,28 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+static void LCD_Initialize(void)
+{
+	lcd.pcf8574.PCF_I2C_ADDRESS = 7;
+	lcd.pcf8574.PCF_I2C_TIMEOUT = 1000;
+	lcd.pcf8574.i2c.Instance = I2C1;
+	lcd.pcf8574.i2c.Init.Timing = 0x0000020B;
+	lcd.NUMBER_OF_LINES = NUMBER_OF_LINES_2;
+	lcd.type = TYPE0;
+
+	if(LCD_Init(&lcd) != LCD_OK)
+	{
+		Error_Handler();
+	}
+}
+
+static void LCD_ShowCommand(char *command)
+{
+	LCD_ClearDisplay(&lcd);
+	LCD_SetLocation(&lcd,0,0);
+	LCD_WriteString(&lcd, command);
+}
 
 /* USER CODE END 4 */
 
