@@ -78,7 +78,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
 	{
 		//tu przyjdzie wywolanie algorytmu FFT
-		//FFT_Test();
+		FFT_Test();
 	}
 }
 
