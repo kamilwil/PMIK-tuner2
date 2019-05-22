@@ -82,6 +82,7 @@ static void LCD_ShowCommand(char *command);
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
 	{
+		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
 		//tu przyjdzie wywolanie algorytmu FFT
 		output = FFT_Test(&hfft);
 	}
@@ -135,6 +136,10 @@ int main(void)
   	{
   		Error_Handler();
   	}
+
+  	//TIM3 on
+  	HAL_TIM_Base_Init(&htim3);
+  	HAL_TIM_Base_Start_IT(&htim3);
 
   	//LCD
   	//LCD_Initialize();
@@ -341,7 +346,7 @@ static void MX_TIM3_Init(void)
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_IC_Init(&htim3) != HAL_OK)
   {
-    Error_Handler();
+	  Error_Handler();
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
@@ -358,10 +363,7 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM3_Init 2 */
-  HAL_NVIC_SetPriority(TIM3_IRQn, 1, 0);
-  HAL_NVIC_EnableIRQ(TIM3_IRQn);
 
-  HAL_TIM_Base_Start(&htim3);
   /* USER CODE END TIM3_Init 2 */
 
 }
