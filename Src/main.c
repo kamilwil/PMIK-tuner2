@@ -23,7 +23,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "ffteval.h"
 #include "hd44780.h"
+
 //#include "ffteval.h"
 /* USER CODE END Includes */
 
@@ -54,10 +56,13 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-LCD_PCF8574_HandleTypeDef lcd;
+LCD_PCF8574_HandleTypeDef hlcd;
+FFT_HandleTypeDef hfft;
 
 uint32_t value;
 uint16_t _value;
+
+q15_t* output;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -78,7 +83,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
 	{
 		//tu przyjdzie wywolanie algorytmu FFT
-		FFT_Test();
+		output = FFT_Test(&hfft);
 	}
 }
 
@@ -353,7 +358,10 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM3_Init 2 */
+  HAL_NVIC_SetPriority(TIM3_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(TIM3_IRQn);
 
+  HAL_TIM_Base_Start(&htim3);
   /* USER CODE END TIM3_Init 2 */
 
 }
@@ -525,14 +533,14 @@ static void MX_GPIO_Init(void)
 
 static void LCD_Initialize(void)
 {
-	lcd.pcf8574.PCF_I2C_ADDRESS = 7;
-	lcd.pcf8574.PCF_I2C_TIMEOUT = 1000;
-	lcd.pcf8574.i2c.Instance = I2C1;
-	lcd.pcf8574.i2c.Init.Timing = 0x0000020B;
-	lcd.NUMBER_OF_LINES = NUMBER_OF_LINES_2;
-	lcd.type = TYPE0;
+	hlcd.pcf8574.PCF_I2C_ADDRESS = 7;
+	hlcd.pcf8574.PCF_I2C_TIMEOUT = 1000;
+	hlcd.pcf8574.i2c.Instance = I2C1;
+	hlcd.pcf8574.i2c.Init.Timing = 0x0000020B;
+	hlcd.NUMBER_OF_LINES = NUMBER_OF_LINES_2;
+	hlcd.type = TYPE0;
 
-	if(LCD_Init(&lcd) != LCD_OK)
+	if(LCD_Init(&hlcd) != LCD_OK)
 	{
 		Error_Handler();
 	}
@@ -540,9 +548,9 @@ static void LCD_Initialize(void)
 
 static void LCD_ShowCommand(char *command)
 {
-	LCD_ClearDisplay(&lcd);
-	LCD_SetLocation(&lcd,0,0);
-	LCD_WriteString(&lcd, command);
+	LCD_ClearDisplay(&hlcd);
+	LCD_SetLocation(&hlcd,0,0);
+	LCD_WriteString(&hlcd, command);
 }
 
 /* USER CODE END 4 */
