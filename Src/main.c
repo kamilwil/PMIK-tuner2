@@ -82,7 +82,6 @@ static void LCD_ShowCommand(char *command);
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
 	{
-		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
 		//tu przyjdzie wywolanie algorytmu FFT
 		output = FFT_Test(&hfft);
 	}
