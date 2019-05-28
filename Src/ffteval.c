@@ -4,7 +4,7 @@
 */
 
 #include "ffteval.h"
-#include "FFT_test1.inc"
+#include "FFT_test2.inc"
 
 /*
 const uint32_t FFT_SIZE = 256;
@@ -19,7 +19,7 @@ arm_status fft_status;
 q15_t* FFT_Test(FFT_HandleTypeDef *handle)
 {
 	//handle->FFT_SIZE = 256;
-	handle->fft_input = FFT_test1_raw;
+	handle->fft_input = __697hz_raw;
 	
 	handle->fft_status = arm_rfft_init_q15(&(handle->fft_instance), FFT_SIZE, 0, 1);
 	arm_rfft_q15(&(handle->fft_instance), (q15_t*)handle->fft_input, handle->fft_output);
