@@ -18,8 +18,13 @@ arm_status fft_status;
 
 q15_t* FFT_Test(FFT_HandleTypeDef *handle)
 {
+	//uint16_t index = 0;
 	//handle->FFT_SIZE = 256;
 	handle->fft_input = __697hz_raw;
+	/*for (index = 0; index < FFT_SIZE*2; ++index)
+	{
+		handle->fft_output[index] = 0;
+	}*/
 	
 	handle->fft_status = arm_rfft_init_q15(&(handle->fft_instance), FFT_SIZE, 0, 1);
 	arm_rfft_q15(&(handle->fft_instance), (q15_t*)handle->fft_input, handle->fft_output);

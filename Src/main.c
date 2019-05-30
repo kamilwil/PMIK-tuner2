@@ -63,6 +63,15 @@ uint32_t value;
 uint16_t _value;
 
 q15_t* output;
+
+uint8_t bt_tosend[4];// Tablica przechowujaca wysylana wiadomosc.
+uint8_t bt_received[10];
+uint16_t bt_size;
+
+//static uint16_t uart_cnt = 0; // Licznik wyslanych wiadomosci
+//uint8_t uart_data[50]; // Tablica przechowujaca wysylana wiadomosc.
+//uint16_t uart_size = 0; // Rozmiar wysylanej wiadomosci
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,12 +88,38 @@ static void MX_TIM4_Init(void);
 static void LCD_Initialize(void);
 static void LCD_ShowCommand(char *command);
 
+//static void UART_Setup(void);
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
 	{
 		//tu przyjdzie wywolanie algorytmu FFT
 		output = FFT_Test(&hfft);
 	}
+	if(htim->Instance == TIM4)
+	{
+		//static uint16_t cnt = 0; // Licznik wyslanych wiadomosci
+
+		//uint16_t size = 0; // Rozmiar wysylanej wiadomosci ++cnt; // Zwiekszenie licznika wyslanych wiadomosci.
+
+		/*++cnt; // Zwiekszenie licznika wyslanych wiadomosci.
+		size = sprintf(data, "Liczba wyslanych wiadomosci: %d.\n\r", cnt); // Stworzenie wiadomosci do wyslania oraz przypisanie ilosci wysylanych znakow do zmiennej size.
+		HAL_UART_Transmit_IT(&huart2, data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
+		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);*/
+		//sprintf(bt_tosend, "AT\r\n");
+
+
+		HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+		HAL_UART_Receive_IT(&huart2, bt_received, 10);
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	char bt_check[10];
+	sprintf(bt_check, "%s", bt_received);
+	if (strcmp(bt_check,"OK\r\n"))
+		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
 }
 
 /* USER CODE END PFP */
@@ -130,15 +165,23 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
+  bt_size = sprintf(bt_tosend, "AT\r\n");
   //ADC on
   	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
   	{
   		Error_Handler();
   	}
 
+  	//UART_Setup();
+
   	//TIM3 on
   	HAL_TIM_Base_Init(&htim3);
   	HAL_TIM_Base_Start_IT(&htim3);
+
+  	//TIM4 on
+  	HAL_TIM_Base_Init(&htim4);
+  	HAL_TIM_Base_Start_IT(&htim4);
+
 
   	//LCD
   	//LCD_Initialize();
@@ -345,7 +388,7 @@ static void MX_TIM3_Init(void)
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_IC_Init(&htim3) != HAL_OK)
   {
-	  Error_Handler();
+    Error_Handler();
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
@@ -388,7 +431,7 @@ static void MX_TIM4_Init(void)
   htim4.Instance = TIM4;
   htim4.Init.Prescaler = 7200;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 300;
+  htim4.Init.Period = 10000;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_IC_Init(&htim4) != HAL_OK)
@@ -460,7 +503,7 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA2_Channel1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Channel1_IRQn, 1, 1);
+  HAL_NVIC_SetPriority(DMA2_Channel1_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA2_Channel1_IRQn);
 
 }
@@ -487,6 +530,9 @@ static void MX_GPIO_Init(void)
                           |LD7_Pin|LD9_Pin|LD10_Pin|LD8_Pin 
                           |LD6_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(HC05_EN_GPIO_Port, HC05_EN_Pin, GPIO_PIN_SET);
+
   /*Configure GPIO pins : DRDY_Pin MEMS_INT3_Pin MEMS_INT4_Pin MEMS_INT1_Pin 
                            MEMS_INT2_Pin */
   GPIO_InitStruct.Pin = DRDY_Pin|MEMS_INT3_Pin|MEMS_INT4_Pin|MEMS_INT1_Pin 
@@ -511,6 +557,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : HC05_EN_Pin */
+  GPIO_InitStruct.Pin = HC05_EN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(HC05_EN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : SPI1_SCK_Pin SPI1_MISO_Pin SPI1_MISOA7_Pin */
   GPIO_InitStruct.Pin = SPI1_SCK_Pin|SPI1_MISO_Pin|SPI1_MISOA7_Pin;
@@ -553,6 +606,66 @@ static void LCD_ShowCommand(char *command)
 	LCD_SetLocation(&hlcd,0,0);
 	LCD_WriteString(&hlcd, command);
 }
+
+/*static void UART_Setup(void)
+{
+	HAL_Delay(100);
+	HAL_UART_Transmit(&huart2, "AT+NAME=HC05\r\n", strlen("AT+NAME=HC05\r\n"), 100);
+	HAL_Delay(100);
+	HAL_UART_Transmit(&huart2, "AT+PSWD=6464\r\n", strlen("AT+PSWD=6464\r\n"), 100);
+	HAL_Delay(100);
+}*/
+
+int __io_putchar(int c)
+{
+send_char(c);
+return c;
+}
+
+/*
+void USARTSend(volatile char *c)
+{
+ while(*c)
+ {
+   while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
+   USART_SendData(USART2, *c++);
+ }
+}
+
+void USART_InsertToBuffer(uint8_t usart_num, uint8_t c)
+{
+	usart_num = 0;
+	if (usart_buf_num[usart_num] < 32)
+	{
+		if (usart_buf_in[usart_num] > (32 - 1))
+		{
+			usart_buf_in[usart_num] = 0;
+		}
+		USART_Buffer[usart_num][usart_buf_in[usart_num]] = c;
+		usart_buf_in[usart_num]++;
+		usart_buf_num[usart_num]++;
+	}
+}
+
+uint8_t USART_Getc(USART_TypeDef* USARTx)
+{
+	uint8_t usart_num = 0;
+	uint8_t c = 0;
+	//Sprawdza czy sa dane w buforze
+	if (usart_buf_num[usart_num] > 0)
+	{
+		 if (usart_buf_out[usart_num] > (32 - 1))
+		 {
+			 usart_buf_out[usart_num] = 0;
+		 }
+		 c = USART_Buffer[usart_num][usart_buf_out[usart_num]];
+		 USART_Buffer[usart_num][usart_buf_out[usart_num]] = 0;
+		 usart_buf_out[usart_num]++;
+		 usart_buf_num[usart_num]--;
+	}
+	return c;
+}
+*/
 
 /* USER CODE END 4 */
 
