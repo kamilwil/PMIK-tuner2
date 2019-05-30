@@ -64,9 +64,10 @@ uint16_t _value;
 
 q15_t* output;
 
-uint8_t bt_tosend[4];// Tablica przechowujaca wysylana wiadomosc.
-uint8_t bt_received[10];
+uint8_t bt_tosend[50];// Tablica przechowujaca wysylana wiadomosc.
+uint8_t bt_received[5];
 uint16_t bt_size;
+uint16_t bt_state;
 
 //static uint16_t uart_cnt = 0; // Licznik wyslanych wiadomosci
 //uint8_t uart_data[50]; // Tablica przechowujaca wysylana wiadomosc.
@@ -88,7 +89,7 @@ static void MX_TIM4_Init(void);
 static void LCD_Initialize(void);
 static void LCD_ShowCommand(char *command);
 
-//static void UART_Setup(void);
+static void Bluetooth_Setup(void);
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
@@ -109,17 +110,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		//sprintf(bt_tosend, "AT\r\n");
 
 
-		HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-		HAL_UART_Receive_IT(&huart2, bt_received, 10);
+		//HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+		//HAL_UART_Receive_IT(&huart2, bt_received, 4);
 	}
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	char bt_check[10];
-	sprintf(bt_check, "%s", bt_received);
-	if (strcmp(bt_check,"OK\r\n"))
-		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
+	//char bt_check[5];
+	//sprintf(bt_check, "%s", bt_received);
+	if (strcmp(bt_received,"OK\r\n"))
+		bt_state = 1;
 }
 
 /* USER CODE END PFP */
@@ -165,14 +166,15 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
-  bt_size = sprintf(bt_tosend, "AT\r\n");
+  bt_state = 0;
+  //bt_size = sprintf(bt_tosend, "AT\r\n");
   //ADC on
   	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
   	{
   		Error_Handler();
   	}
 
-  	//UART_Setup();
+  	Bluetooth_Setup();
 
   	//TIM3 on
   	HAL_TIM_Base_Init(&htim3);
@@ -607,14 +609,21 @@ static void LCD_ShowCommand(char *command)
 	LCD_WriteString(&hlcd, command);
 }
 
-/*static void UART_Setup(void)
+static void Bluetooth_Setup(void)
 {
-	HAL_Delay(100);
-	HAL_UART_Transmit(&huart2, "AT+NAME=HC05\r\n", strlen("AT+NAME=HC05\r\n"), 100);
-	HAL_Delay(100);
-	HAL_UART_Transmit(&huart2, "AT+PSWD=6464\r\n", strlen("AT+PSWD=6464\r\n"), 100);
-	HAL_Delay(100);
-}*/
+	bt_size = sprintf(bt_tosend, "AT+NAME=STROIK\r\n");
+	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	HAL_UART_Receive_IT(&huart2, bt_received, 5);
+	//while (bt_state == 0);
+	bt_state = 0;
+	bt_size = sprintf(bt_tosend, "AT+PSWD=6464\r\n");
+	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	HAL_UART_Receive_IT(&huart2, bt_received, 5);
+	//while (bt_state == 0);
+
+
+
+}
 
 int __io_putchar(int c)
 {
