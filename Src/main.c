@@ -162,7 +162,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   bt_state = 0;
-  //bt_size = sprintf(bt_tosend, "AT\r\n");
 
   	//ADC on
 	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
@@ -610,21 +609,25 @@ static void LCD_ShowCommand(char *command)
 
 static void Bluetooth_Setup(void)
 {
+	//wejscie do trybu AT
+
+	/*bt_size = sprintf(bt_tosend, "AT+RESET\r\n");
+	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	while (bt_state == 0);*/
+	//ustawienie nazwy modulu
+	bt_state = 0;
 	bt_size = sprintf(bt_tosend, "AT+NAME=STROIK\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
 	while (bt_state == 0);
-	//HAL_Delay(1000);
+	//ustawienie PINu modulu
 	bt_state = 0;
 	bt_size = sprintf(bt_tosend, "AT+PSWD=6464\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-	//HAL_Delay(1000);
 	while (bt_state == 0);
-	__NOP();
-	//wyjscie z trybu AT, trzeba zmienic bo nie dziala
-	/*HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+	//wyjscie z trybu AT
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 	bt_size = sprintf(bt_tosend, "AT+RESET\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-	HAL_UART_Receive_IT(&huart2, bt_received, 5);*/
 }
 
 int __io_putchar(int c)
