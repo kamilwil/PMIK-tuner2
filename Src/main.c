@@ -65,7 +65,7 @@ uint16_t _value;
 q15_t* output;
 
 uint8_t bt_tosend[50];// Tablica przechowujaca wysylana wiadomosc.
-uint8_t bt_received[5];
+uint8_t bt_received[4];
 uint16_t bt_size;
 uint16_t bt_state;
 
@@ -99,19 +99,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	}
 	if(htim->Instance == TIM4)
 	{
-		//static uint16_t cnt = 0; // Licznik wyslanych wiadomosci
-
-		//uint16_t size = 0; // Rozmiar wysylanej wiadomosci ++cnt; // Zwiekszenie licznika wyslanych wiadomosci.
-
-		/*++cnt; // Zwiekszenie licznika wyslanych wiadomosci.
-		size = sprintf(data, "Liczba wyslanych wiadomosci: %d.\n\r", cnt); // Stworzenie wiadomosci do wyslania oraz przypisanie ilosci wysylanych znakow do zmiennej size.
-		HAL_UART_Transmit_IT(&huart2, data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
-		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);*/
+		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
 		//sprintf(bt_tosend, "AT\r\n");
 
 
-		//HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-		//HAL_UART_Receive_IT(&huart2, bt_received, 4);
+
 	}
 }
 
@@ -119,8 +111,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	//char bt_check[5];
 	//sprintf(bt_check, "%s", bt_received);
-	if (strcmp(bt_received,"OK\r\n"))
+	if (strcmp(bt_received,"OK\r\n") == 0)
 		bt_state = 1;
+	else bt_state = 0;
+
+	HAL_UART_Receive_IT(&huart2, bt_received, 4);
 }
 
 /* USER CODE END PFP */
@@ -168,22 +163,26 @@ int main(void)
 
   bt_state = 0;
   //bt_size = sprintf(bt_tosend, "AT\r\n");
-  //ADC on
-  	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
-  	{
-  		Error_Handler();
-  	}
 
-  	Bluetooth_Setup();
+  	//ADC on
+	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
+	{
+		Error_Handler();
+	}
 
-  	//TIM3 on
-  	HAL_TIM_Base_Init(&htim3);
-  	HAL_TIM_Base_Start_IT(&htim3);
+	//UART init
+	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	HAL_UART_Receive_IT(&huart2, bt_received, 4);
 
-  	//TIM4 on
-  	HAL_TIM_Base_Init(&htim4);
-  	HAL_TIM_Base_Start_IT(&htim4);
+	//TIM3 on
+	HAL_TIM_Base_Init(&htim3);
+	HAL_TIM_Base_Start_IT(&htim3);
 
+	//TIM4 on
+	HAL_TIM_Base_Init(&htim4);
+	HAL_TIM_Base_Start_IT(&htim4);
+
+	Bluetooth_Setup();
 
   	//LCD
   	//LCD_Initialize();
@@ -613,16 +612,19 @@ static void Bluetooth_Setup(void)
 {
 	bt_size = sprintf(bt_tosend, "AT+NAME=STROIK\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-	HAL_UART_Receive_IT(&huart2, bt_received, 5);
-	//while (bt_state == 0);
+	while (bt_state == 0);
+	//HAL_Delay(1000);
 	bt_state = 0;
 	bt_size = sprintf(bt_tosend, "AT+PSWD=6464\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-	HAL_UART_Receive_IT(&huart2, bt_received, 5);
-	//while (bt_state == 0);
-
-
-
+	//HAL_Delay(1000);
+	while (bt_state == 0);
+	__NOP();
+	//wyjscie z trybu AT, trzeba zmienic bo nie dziala
+	/*HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+	bt_size = sprintf(bt_tosend, "AT+RESET\r\n");
+	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	HAL_UART_Receive_IT(&huart2, bt_received, 5);*/
 }
 
 int __io_putchar(int c)
