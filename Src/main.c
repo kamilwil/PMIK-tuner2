@@ -103,8 +103,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
 
 		if (bt_state == 2){
-			//bt_size = sprintf(bt_tosend, "%d", bt_testvalue);
-			bt_size = sprintf(bt_tosend, "ConnectionTEST");
+			bt_size = sprintf(bt_tosend, "%d", bt_testvalue);
 			HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
 			++bt_testvalue;
 		}
@@ -630,6 +629,11 @@ static void Bluetooth_Setup(void)
 	//ustawienie PINu modulu
 	bt_state = 0;
 	bt_size = sprintf(bt_tosend, "AT+PSWD=6464\r\n");
+	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	while (bt_state == 0);
+	//ustawienie baudrate (testowo, moze niepotrzebne)
+	bt_state = 0;
+	bt_size = sprintf(bt_tosend, "AT+UART=38400,1,0\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
 	while (bt_state == 0);
 	//wyjscie z trybu AT
