@@ -68,6 +68,7 @@ uint8_t bt_tosend[50];// Tablica przechowujaca wysylana wiadomosc.
 uint8_t bt_received[4];
 uint16_t bt_size;
 uint16_t bt_state;
+uint16_t bt_testvalue;
 
 //static uint16_t uart_cnt = 0; // Licznik wyslanych wiadomosci
 //uint8_t uart_data[50]; // Tablica przechowujaca wysylana wiadomosc.
@@ -100,17 +101,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM4)
 	{
 		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
-		//sprintf(bt_tosend, "AT\r\n");
 
-
-
+		if (bt_state == 2){
+			//bt_size = sprintf(bt_tosend, "%d", bt_testvalue);
+			bt_size = sprintf(bt_tosend, "ConnectionTEST");
+			HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+			++bt_testvalue;
+		}
 	}
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	//char bt_check[5];
-	//sprintf(bt_check, "%s", bt_received);
+	//zakoncz gdy dostaniesz powiadomienie z aplikacji
+	if (bt_state == 2)
+		if (strcmp(bt_received, "EndConnection") == 0)
+			bt_state = 0;
+
 	if (strcmp(bt_received,"OK\r\n") == 0)
 		bt_state = 1;
 	else bt_state = 0;
@@ -162,6 +169,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   bt_state = 0;
+  bt_testvalue = 200;
 
   	//ADC on
 	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
@@ -625,9 +633,13 @@ static void Bluetooth_Setup(void)
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
 	while (bt_state == 0);
 	//wyjscie z trybu AT
+	bt_state = 0;
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 	bt_size = sprintf(bt_tosend, "AT+RESET\r\n");
 	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
+	while (bt_state == 0);
+	//wejscie w tryb przesylania danych
+	bt_state = 2;
 }
 
 int __io_putchar(int c)
