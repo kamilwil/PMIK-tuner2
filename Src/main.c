@@ -59,9 +59,7 @@ UART_HandleTypeDef huart2;
 LCD_PCF8574_HandleTypeDef hlcd; /*!< Handle for LCD */
 FFT_HandleTypeDef hfft; /*!< Handle for FFT evaluation */
 
-uint32_t value;
-uint16_t _value;
-uint16_t values[512];
+uint32_t values[512];
 
 q15_t* output; /*!< Output of FFT evaluation */
 
@@ -94,6 +92,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	{
 		//czestotliwosc probkowania: 7340,94615 Hz
 		output = FFT_Test(&hfft);
+		//gdyby FFT dzialalo poprawnie:
+		//output = FFT_Eval(&hfft, (uint16_t*)values);
 	}
 	if(htim->Instance == TIM4)
 	{
@@ -112,21 +112,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		}
 
 		if (bt_state == 2){
+			//do pokazania, ze komunikacja dziala
 			//bt_size = sprintf(bt_tosend, "%d", bt_testvalue);
+			//++bt_testvalue;
 			bt_size = sprintf(bt_tosend, "%d", max_ind*14);
 			HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-			//++bt_testvalue;
 		}
 	}
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	//zakoncz gdy dostaniesz powiadomienie z aplikacji
-	if (bt_state == 2)
-		if (strcmp(bt_received, "EndConnection") == 0)
-			bt_state = 0;
-
 	if (strcmp(bt_received,"OK\r\n") == 0)
 		bt_state = 1;
 	else bt_state = 0;
@@ -181,7 +177,7 @@ int main(void)
   bt_testvalue = 200;
 
   	//ADC on
-	if (HAL_ADC_Start_DMA(&hadc2, &values, 512) != HAL_OK)
+	if (HAL_ADC_Start_DMA(&hadc2, values, 512) != HAL_OK)
 	{
 		Error_Handler();
 	}
@@ -198,12 +194,12 @@ int main(void)
 	HAL_TIM_Base_Init(&htim4);
 	HAL_TIM_Base_Start_IT(&htim4);
 
+	//LCD init
+	LCD_Initialize();
+	LCD_ShowCommand("Inicjalizacja...");
+
 	//Bluetooth setup
 	Bluetooth_Setup();
-
-	//LCD init
-  	LCD_Initialize();
-  	LCD_ShowCommand("Init w porzo!");
 
   /* USER CODE END 2 */
 
@@ -638,10 +634,8 @@ static void LCD_ShowCommand(char *command)
 static void Bluetooth_Setup(void)
 {
 	//wejscie do trybu AT
+	LCD_ShowCommand("Konfiguracja...");
 
-	/*bt_size = sprintf(bt_tosend, "AT+RESET\r\n");
-	HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-	while (bt_state == 0);*/
 	//ustawienie nazwy modulu
 	bt_state = 0;
 	bt_size = sprintf(bt_tosend, "AT+NAME=STROIK\r\n");
@@ -665,6 +659,7 @@ static void Bluetooth_Setup(void)
 	while (bt_state == 0);
 	//wejscie w tryb przesylania danych
 	bt_state = 2;
+	LCD_ShowCommand("Gotowy!");
 }
 
 /* USER CODE END 4 */
