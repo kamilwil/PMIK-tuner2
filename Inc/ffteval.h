@@ -1,8 +1,9 @@
-/*
-	ffteval.h
-	
-	Header file for FFT evaluation
-*/
+/**
+  ******************************************************************************
+  * @file           : ffteval.h
+  * @brief          : Header file for FFT evaluation
+  ******************************************************************************
+  */
 
 #ifndef FFTEVAL_H_
 #define FFTEVAL_H_
@@ -12,10 +13,7 @@
 #include "stm32f3xx_hal.h"
 #include "arm_math.h"
 
-//uint32_t FFT_SIZE = 256;
-
 typedef struct{
-	//FFT_SIZE was here
 	unsigned char *fft_input;
 	arm_rfft_instance_q15 fft_instance;
 	q15_t fft_output[FFT_SIZE*2];

@@ -56,23 +56,20 @@ TIM_HandleTypeDef htim4;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-LCD_PCF8574_HandleTypeDef hlcd;
-FFT_HandleTypeDef hfft;
+LCD_PCF8574_HandleTypeDef hlcd; /*!< Handle for LCD */
+FFT_HandleTypeDef hfft; /*!< Handle for FFT evaluation */
 
 uint32_t value;
 uint16_t _value;
+uint16_t values[512];
 
-q15_t* output;
+q15_t* output; /*!< Output of FFT evaluation */
 
-uint8_t bt_tosend[50];// Tablica przechowujaca wysylana wiadomosc.
-uint8_t bt_received[4];
-uint16_t bt_size;
-uint16_t bt_state;
+uint8_t bt_tosend[50]; /*!< Message to be sent via Bluetooth */
+uint8_t bt_received[4]; /*!< Message received via Bluetooth */
+uint16_t bt_size; /*!< UART TxBuffer size when sending via Bluetooth */
+uint16_t bt_state; /*!< Bluetooth connection state */
 uint16_t bt_testvalue;
-
-//static uint16_t uart_cnt = 0; // Licznik wyslanych wiadomosci
-//uint8_t uart_data[50]; // Tablica przechowujaca wysylana wiadomosc.
-//uint16_t uart_size = 0; // Rozmiar wysylanej wiadomosci
 
 /* USER CODE END PV */
 
@@ -95,17 +92,30 @@ static void Bluetooth_Setup(void);
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3)
 	{
-		//tu przyjdzie wywolanie algorytmu FFT
+		//czestotliwosc probkowania: 7340,94615 Hz
 		output = FFT_Test(&hfft);
 	}
 	if(htim->Instance == TIM4)
 	{
 		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);
 
+		uint16_t i = 0;
+		q15_t max = 0;
+		uint16_t max_ind = 0;
+		for (i=0; i<256; i++)
+		{
+			if (output[i] > max)
+			{
+				max = output[i];
+				max_ind = i;
+			}
+		}
+
 		if (bt_state == 2){
-			bt_size = sprintf(bt_tosend, "%d", bt_testvalue);
+			//bt_size = sprintf(bt_tosend, "%d", bt_testvalue);
+			bt_size = sprintf(bt_tosend, "%d", max_ind*14);
 			HAL_UART_Transmit_IT(&huart2, bt_tosend, bt_size);
-			++bt_testvalue;
+			//++bt_testvalue;
 		}
 	}
 }
@@ -171,7 +181,7 @@ int main(void)
   bt_testvalue = 200;
 
   	//ADC on
-	if (HAL_ADC_Start_DMA(&hadc2, &value, 1) != HAL_OK)
+	if (HAL_ADC_Start_DMA(&hadc2, &values, 512) != HAL_OK)
 	{
 		Error_Handler();
 	}
@@ -188,11 +198,12 @@ int main(void)
 	HAL_TIM_Base_Init(&htim4);
 	HAL_TIM_Base_Start_IT(&htim4);
 
+	//Bluetooth setup
 	Bluetooth_Setup();
 
-  	//LCD
-  	//LCD_Initialize();
-  	//LCD_ShowCommand("Init w porzo!");
+	//LCD init
+  	LCD_Initialize();
+  	LCD_ShowCommand("Init w porzo!");
 
   /* USER CODE END 2 */
 
@@ -247,7 +258,7 @@ void SystemClock_Config(void)
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2|RCC_PERIPHCLK_I2C1
                               |RCC_PERIPHCLK_ADC12;
   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
-  PeriphClkInit.Adc12ClockSelection = RCC_ADC12PLLCLK_DIV4;
+  PeriphClkInit.Adc12ClockSelection = RCC_ADC12PLLCLK_DIV16;
   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_HSI;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
@@ -388,7 +399,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 20;
+  htim3.Init.Prescaler = 159-1;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim3.Init.Period = 31304;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -436,7 +447,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 7200;
+  htim4.Init.Prescaler = 7200-1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 10000;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -592,6 +603,9 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+/**
+ * @brief LCD initialization - setting up address, timeout and I2C communication
+ */
 static void LCD_Initialize(void)
 {
 	hlcd.pcf8574.PCF_I2C_ADDRESS = 7;
@@ -607,6 +621,10 @@ static void LCD_Initialize(void)
 	}
 }
 
+/**
+ * @brief Showing text od LCD screen. Uses functions implemented in the HD44780 library.
+ * @param command text shown on screen
+ */
 static void LCD_ShowCommand(char *command)
 {
 	LCD_ClearDisplay(&hlcd);
@@ -614,6 +632,9 @@ static void LCD_ShowCommand(char *command)
 	LCD_WriteString(&hlcd, command);
 }
 
+/**
+ * @ brief Setting up Bluetooth connection via AT commands. Name "STROIK" is set, as well as a pairing PIN-code and a UART baudrate. Resetting at the end to exit AT command mode.
+ */
 static void Bluetooth_Setup(void)
 {
 	//wejscie do trybu AT
@@ -645,57 +666,6 @@ static void Bluetooth_Setup(void)
 	//wejscie w tryb przesylania danych
 	bt_state = 2;
 }
-
-int __io_putchar(int c)
-{
-send_char(c);
-return c;
-}
-
-/*
-void USARTSend(volatile char *c)
-{
- while(*c)
- {
-   while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
-   USART_SendData(USART2, *c++);
- }
-}
-
-void USART_InsertToBuffer(uint8_t usart_num, uint8_t c)
-{
-	usart_num = 0;
-	if (usart_buf_num[usart_num] < 32)
-	{
-		if (usart_buf_in[usart_num] > (32 - 1))
-		{
-			usart_buf_in[usart_num] = 0;
-		}
-		USART_Buffer[usart_num][usart_buf_in[usart_num]] = c;
-		usart_buf_in[usart_num]++;
-		usart_buf_num[usart_num]++;
-	}
-}
-
-uint8_t USART_Getc(USART_TypeDef* USARTx)
-{
-	uint8_t usart_num = 0;
-	uint8_t c = 0;
-	//Sprawdza czy sa dane w buforze
-	if (usart_buf_num[usart_num] > 0)
-	{
-		 if (usart_buf_out[usart_num] > (32 - 1))
-		 {
-			 usart_buf_out[usart_num] = 0;
-		 }
-		 c = USART_Buffer[usart_num][usart_buf_out[usart_num]];
-		 USART_Buffer[usart_num][usart_buf_out[usart_num]] = 0;
-		 usart_buf_out[usart_num]++;
-		 usart_buf_num[usart_num]--;
-	}
-	return c;
-}
-*/
 
 /* USER CODE END 4 */
 

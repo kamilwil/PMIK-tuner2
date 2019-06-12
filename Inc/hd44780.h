@@ -1,10 +1,3 @@
-/*
- * hd44780.h
- *
- *  Created on: Feb 20, 2014
- *      Author: Peter
- */
-
 #ifndef HD44780_H_
 #define HD44780_H_
 

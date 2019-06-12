@@ -1,10 +1,3 @@
-/*
- * pcf8574.h
- *
- *  Created on: Dec 30, 2014
- *      Author: peter
- */
-
 #ifndef INC_PCF8574_H_
 #define INC_PCF8574_H_
 
