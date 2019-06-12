@@ -1,0 +1,392 @@
+\hypertarget{hd44780_8c}{}\section{Src/hd44780.c File Reference}
+\label{hd44780_8c}\index{Src/hd44780.c@{Src/hd44780.c}}
+{\ttfamily \#include \char`\"{}hd44780.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hd44780_8c_af955829ddd4c948c616120494e1635da}{L\+C\+D\+\_\+\+Wait\+For\+Busy\+Flag}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_aac45a5f31fff14cf969b12d75c793112}{L\+C\+D\+\_\+\+I2\+C\+\_\+\+Write\+Out}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a6b3c2ed0faea64fad33e6e438202c233}{L\+C\+D\+\_\+\+State\+L\+E\+D\+Control}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t on)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a088b423fada88f084d8bbc08c5d3595a}{L\+C\+D\+\_\+\+State\+Write\+Bit}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t value, \mbox{\hyperlink{hd44780_8h_a3f1ddbaa6e59d522eb1b30e22e7ae4a1}{L\+C\+D\+\_\+\+P\+IN}} pin)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a081ff994137ea71633101fa16e8a1b14}{L\+C\+D\+\_\+\+Init}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_ac2e1622efaa9c53c6c09985b6329933f}{L\+C\+D\+\_\+\+Write\+To\+Data\+Bus}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t data)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_aa8e2f69585a8549210ece71790f5807b}{L\+C\+D\+\_\+\+Get\+Busy\+Flag}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t $\ast$flag)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a8e16a58440f75d2009bc3a317686d5ed}{L\+C\+D\+\_\+\+Write\+C\+MD}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t cmd)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_ae78ac65676190a7c2c5fe22e89bc5faa}{L\+C\+D\+\_\+\+Write\+D\+A\+TA}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t data)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a346030229f78d83175fd8b221ed2dd61}{L\+C\+D\+\_\+\+Set\+Location}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t x, uint8\+\_\+t y)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a55af11fb8b557f163172a84f1c59fc3d}{L\+C\+D\+\_\+\+Write\+String}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, char $\ast$s)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a333cc34b8919424f6c9ec1f97f260f4c}{L\+C\+D\+\_\+\+Clear\+Display}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a018a4e2b087e3ca8ec70752cc65bb571}{L\+C\+D\+\_\+\+Display\+ON}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_aa78a93fb820712ef35dc6920aa504d52}{L\+C\+D\+\_\+\+Display\+O\+FF}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a8287449d5866049c421faeb92e68f9bf}{L\+C\+D\+\_\+\+Cursor\+ON}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t blink)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a2d000a090c0420f4e61cedaab712c276}{L\+C\+D\+\_\+\+Cursor\+O\+FF}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a88f781b650abb45748e1dbc50108c48f}{L\+C\+D\+\_\+\+Shift\+Cursor}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t direction, uint8\+\_\+t steps)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a6669fbaa3a924edcea5f4024e8d945ac}{L\+C\+D\+\_\+\+Shift\+Display}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t direction, uint8\+\_\+t steps)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a62d462f49fa66214bbf84cef759d76dd}{L\+C\+D\+\_\+\+Write\+Number}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, unsigned long n, uint8\+\_\+t base)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_a9e2f84f5ef357c81ab161cae0cf1d512}{L\+C\+D\+\_\+\+Write\+Float}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, double number, uint8\+\_\+t digits)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_ab73fd2b1f5d07688741e838d7853fde2}{L\+C\+D\+\_\+\+Entry\+Mode\+Set}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, \mbox{\hyperlink{hd44780_8h_a5b3b2dd4970e4e42520acbe1c6ea6688}{L\+C\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+C\+\_\+\+D\+EC}} direction, \mbox{\hyperlink{hd44780_8h_aeaaee990fffdadef85abfcf53d3288a0}{L\+C\+D\+\_\+\+S\+H\+I\+FT}} shift)
+\item 
+\mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{hd44780_8c_af017e645b75fbabb4d4e4bfc356defe0}{L\+C\+D\+\_\+\+Custom\+Char}} (\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t $\ast$pattern, uint8\+\_\+t address)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{hd44780_8c_a2102af49ed355677f5db0ebfbc399242}{P\+C\+F8574\+\_\+\+Type0\+Pins}} \mbox{[}8\mbox{]} = \{ 4, 5, 6, 7, 0, 1, 2, 3 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{hd44780_8c_a333cc34b8919424f6c9ec1f97f260f4c}\label{hd44780_8c_a333cc34b8919424f6c9ec1f97f260f4c}} 
+\index{hd44780.c@{hd44780.c}!LCD\_ClearDisplay@{LCD\_ClearDisplay}}
+\index{LCD\_ClearDisplay@{LCD\_ClearDisplay}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_ClearDisplay()}{LCD\_ClearDisplay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Clear\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Clears the L\+CD 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a2d000a090c0420f4e61cedaab712c276}\label{hd44780_8c_a2d000a090c0420f4e61cedaab712c276}} 
+\index{hd44780.c@{hd44780.c}!LCD\_CursorOFF@{LCD\_CursorOFF}}
+\index{LCD\_CursorOFF@{LCD\_CursorOFF}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_CursorOFF()}{LCD\_CursorOFF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Cursor\+O\+FF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Turns O\+FF the cursor 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a8287449d5866049c421faeb92e68f9bf}\label{hd44780_8c_a8287449d5866049c421faeb92e68f9bf}} 
+\index{hd44780.c@{hd44780.c}!LCD\_CursorON@{LCD\_CursorON}}
+\index{LCD\_CursorON@{LCD\_CursorON}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_CursorON()}{LCD\_CursorON()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Cursor\+ON (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{blink }\end{DoxyParamCaption})}
+
+Turns ON the cursor 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em blink} & -\/ if you want the cursor to blink set this to 1, else 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_af017e645b75fbabb4d4e4bfc356defe0}\label{hd44780_8c_af017e645b75fbabb4d4e4bfc356defe0}} 
+\index{hd44780.c@{hd44780.c}!LCD\_CustomChar@{LCD\_CustomChar}}
+\index{LCD\_CustomChar@{LCD\_CustomChar}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_CustomChar()}{LCD\_CustomChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Custom\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t $\ast$}]{pattern,  }\item[{uint8\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+Creates a custom character at the given address 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em pattern} & -\/ pointer to the bit pattern of the character \\
+\hline
+{\em address} & -\/ an address to which the character will be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_aa78a93fb820712ef35dc6920aa504d52}\label{hd44780_8c_aa78a93fb820712ef35dc6920aa504d52}} 
+\index{hd44780.c@{hd44780.c}!LCD\_DisplayOFF@{LCD\_DisplayOFF}}
+\index{LCD\_DisplayOFF@{LCD\_DisplayOFF}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_DisplayOFF()}{LCD\_DisplayOFF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Display\+O\+FF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Turns O\+FF the display 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a018a4e2b087e3ca8ec70752cc65bb571}\label{hd44780_8c_a018a4e2b087e3ca8ec70752cc65bb571}} 
+\index{hd44780.c@{hd44780.c}!LCD\_DisplayON@{LCD\_DisplayON}}
+\index{LCD\_DisplayON@{LCD\_DisplayON}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_DisplayON()}{LCD\_DisplayON()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Display\+ON (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Turns ON the display 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_ab73fd2b1f5d07688741e838d7853fde2}\label{hd44780_8c_ab73fd2b1f5d07688741e838d7853fde2}} 
+\index{hd44780.c@{hd44780.c}!LCD\_EntryModeSet@{LCD\_EntryModeSet}}
+\index{LCD\_EntryModeSet@{LCD\_EntryModeSet}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_EntryModeSet()}{LCD\_EntryModeSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Entry\+Mode\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{\mbox{\hyperlink{hd44780_8h_a5b3b2dd4970e4e42520acbe1c6ea6688}{L\+C\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+I\+N\+C\+\_\+\+D\+EC}}}]{direction,  }\item[{\mbox{\hyperlink{hd44780_8h_aeaaee990fffdadef85abfcf53d3288a0}{L\+C\+D\+\_\+\+S\+H\+I\+FT}}}]{shift }\end{DoxyParamCaption})}
+
+Sets the mode by which data is written to the L\+CD 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em direction} & \\
+\hline
+{\em shift} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_aa8e2f69585a8549210ece71790f5807b}\label{hd44780_8c_aa8e2f69585a8549210ece71790f5807b}} 
+\index{hd44780.c@{hd44780.c}!LCD\_GetBusyFlag@{LCD\_GetBusyFlag}}
+\index{LCD\_GetBusyFlag@{LCD\_GetBusyFlag}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_GetBusyFlag()}{LCD\_GetBusyFlag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Get\+Busy\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t $\ast$}]{flag }\end{DoxyParamCaption})}
+
+Gets the state of the busy flag 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em flag} & -\/ a pointer to a variable that will contain the state of the flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_aac45a5f31fff14cf969b12d75c793112}\label{hd44780_8c_aac45a5f31fff14cf969b12d75c793112}} 
+\index{hd44780.c@{hd44780.c}!LCD\_I2C\_WriteOut@{LCD\_I2C\_WriteOut}}
+\index{LCD\_I2C\_WriteOut@{LCD\_I2C\_WriteOut}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_I2C\_WriteOut()}{LCD\_I2C\_WriteOut()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+I2\+C\+\_\+\+Write\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Writes the current state to the P\+C\+F8574 expander 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a081ff994137ea71633101fa16e8a1b14}\label{hd44780_8c_a081ff994137ea71633101fa16e8a1b14}} 
+\index{hd44780.c@{hd44780.c}!LCD\_Init@{LCD\_Init}}
+\index{LCD\_Init@{LCD\_Init}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_Init()}{LCD\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+L\+CD initialization function 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a346030229f78d83175fd8b221ed2dd61}\label{hd44780_8c_a346030229f78d83175fd8b221ed2dd61}} 
+\index{hd44780.c@{hd44780.c}!LCD\_SetLocation@{LCD\_SetLocation}}
+\index{LCD\_SetLocation@{LCD\_SetLocation}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_SetLocation()}{LCD\_SetLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Set\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Sets the location of the memory pointer in the controller (used to control other operations (for example where to write a string)) 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em x} & -\/ x-\/coordinate of the location \\
+\hline
+{\em y} & -\/ y-\/coordinate of the location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a88f781b650abb45748e1dbc50108c48f}\label{hd44780_8c_a88f781b650abb45748e1dbc50108c48f}} 
+\index{hd44780.c@{hd44780.c}!LCD\_ShiftCursor@{LCD\_ShiftCursor}}
+\index{LCD\_ShiftCursor@{LCD\_ShiftCursor}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_ShiftCursor()}{LCD\_ShiftCursor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Shift\+Cursor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{direction,  }\item[{uint8\+\_\+t}]{steps }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hd44780_8c_a6669fbaa3a924edcea5f4024e8d945ac}\label{hd44780_8c_a6669fbaa3a924edcea5f4024e8d945ac}} 
+\index{hd44780.c@{hd44780.c}!LCD\_ShiftDisplay@{LCD\_ShiftDisplay}}
+\index{LCD\_ShiftDisplay@{LCD\_ShiftDisplay}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_ShiftDisplay()}{LCD\_ShiftDisplay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Shift\+Display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{direction,  }\item[{uint8\+\_\+t}]{steps }\end{DoxyParamCaption})}
+
+Shifts the contents of the L\+CD 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em direction} & -\/ directions of the shift \\
+\hline
+{\em steps} & -\/ how many positions to shift the contents by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a6b3c2ed0faea64fad33e6e438202c233}\label{hd44780_8c_a6b3c2ed0faea64fad33e6e438202c233}} 
+\index{hd44780.c@{hd44780.c}!LCD\_StateLEDControl@{LCD\_StateLEDControl}}
+\index{LCD\_StateLEDControl@{LCD\_StateLEDControl}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_StateLEDControl()}{LCD\_StateLEDControl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+State\+L\+E\+D\+Control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{on }\end{DoxyParamCaption})}
+
+Controls the state of the L\+CD backlight 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em on} & -\/ set it to 1 if you want to turn the backlight on, else 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a088b423fada88f084d8bbc08c5d3595a}\label{hd44780_8c_a088b423fada88f084d8bbc08c5d3595a}} 
+\index{hd44780.c@{hd44780.c}!LCD\_StateWriteBit@{LCD\_StateWriteBit}}
+\index{LCD\_StateWriteBit@{LCD\_StateWriteBit}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_StateWriteBit()}{LCD\_StateWriteBit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+State\+Write\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{value,  }\item[{\mbox{\hyperlink{hd44780_8h_a3f1ddbaa6e59d522eb1b30e22e7ae4a1}{L\+C\+D\+\_\+\+P\+IN}}}]{pin }\end{DoxyParamCaption})}
+
+Rewrites a bit in the state variable with the value specified 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em value} & -\/ value of the bit (0 or 1) \\
+\hline
+{\em pin} & -\/ pin which you want to write to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_af955829ddd4c948c616120494e1635da}\label{hd44780_8c_af955829ddd4c948c616120494e1635da}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WaitForBusyFlag@{LCD\_WaitForBusyFlag}}
+\index{LCD\_WaitForBusyFlag@{LCD\_WaitForBusyFlag}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WaitForBusyFlag()}{LCD\_WaitForBusyFlag()}}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+\+Wait\+For\+Busy\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Waits until the busy flag is reset 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hd44780_8c_a8e16a58440f75d2009bc3a317686d5ed}\label{hd44780_8c_a8e16a58440f75d2009bc3a317686d5ed}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WriteCMD@{LCD\_WriteCMD}}
+\index{LCD\_WriteCMD@{LCD\_WriteCMD}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WriteCMD()}{LCD\_WriteCMD()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Write\+C\+MD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+Sends a command to the H\+D44780 controller 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em cmd} & -\/ a command you want to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_ae78ac65676190a7c2c5fe22e89bc5faa}\label{hd44780_8c_ae78ac65676190a7c2c5fe22e89bc5faa}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WriteDATA@{LCD\_WriteDATA}}
+\index{LCD\_WriteDATA@{LCD\_WriteDATA}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WriteDATA()}{LCD\_WriteDATA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Write\+D\+A\+TA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+Sends data to the H\+D44780 controller 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em data} & -\/ data you want to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a9e2f84f5ef357c81ab161cae0cf1d512}\label{hd44780_8c_a9e2f84f5ef357c81ab161cae0cf1d512}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WriteFloat@{LCD\_WriteFloat}}
+\index{LCD\_WriteFloat@{LCD\_WriteFloat}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WriteFloat()}{LCD\_WriteFloat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Write\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{double}]{number,  }\item[{uint8\+\_\+t}]{digits }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{hd44780_8c_a62d462f49fa66214bbf84cef759d76dd}\label{hd44780_8c_a62d462f49fa66214bbf84cef759d76dd}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WriteNumber@{LCD\_WriteNumber}}
+\index{LCD\_WriteNumber@{LCD\_WriteNumber}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WriteNumber()}{LCD\_WriteNumber()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Write\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{unsigned long}]{n,  }\item[{uint8\+\_\+t}]{base }\end{DoxyParamCaption})}
+
+Writes a number to the L\+CD 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em n} & -\/ a number you want to write to the L\+CD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_a55af11fb8b557f163172a84f1c59fc3d}\label{hd44780_8c_a55af11fb8b557f163172a84f1c59fc3d}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WriteString@{LCD\_WriteString}}
+\index{LCD\_WriteString@{LCD\_WriteString}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WriteString()}{LCD\_WriteString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Write\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Writes a string to the L\+CD 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em s} & -\/ string you want to write to the L\+CD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hd44780_8c_ac2e1622efaa9c53c6c09985b6329933f}\label{hd44780_8c_ac2e1622efaa9c53c6c09985b6329933f}} 
+\index{hd44780.c@{hd44780.c}!LCD\_WriteToDataBus@{LCD\_WriteToDataBus}}
+\index{LCD\_WriteToDataBus@{LCD\_WriteToDataBus}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{LCD\_WriteToDataBus()}{LCD\_WriteToDataBus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hd44780_8h_addc817fafbc1e995a7d4c229c65dd6c0}{L\+C\+D\+\_\+\+R\+E\+S\+U\+LT}} L\+C\+D\+\_\+\+Write\+To\+Data\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+Writes lower 4bits of data to the data bus of the controller 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the L\+CD handle \\
+\hline
+{\em data} & -\/ data you want to put on the data bus (lower 4bits) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{hd44780_8c_a2102af49ed355677f5db0ebfbc399242}\label{hd44780_8c_a2102af49ed355677f5db0ebfbc399242}} 
+\index{hd44780.c@{hd44780.c}!PCF8574\_Type0Pins@{PCF8574\_Type0Pins}}
+\index{PCF8574\_Type0Pins@{PCF8574\_Type0Pins}!hd44780.c@{hd44780.c}}
+\subsubsection{\texorpdfstring{PCF8574\_Type0Pins}{PCF8574\_Type0Pins}}
+{\footnotesize\ttfamily P\+C\+F8574\+\_\+\+Type0\+Pins\mbox{[}8\mbox{]} -\/ characterization of pins for hardware of type 0 = \{ 4, 5, 6, 7, 0, 1, 2, 3 \}}
+

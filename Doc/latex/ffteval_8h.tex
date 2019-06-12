@@ -1,0 +1,56 @@
+\hypertarget{ffteval_8h}{}\section{Inc/ffteval.h File Reference}
+\label{ffteval_8h}\index{Inc/ffteval.h@{Inc/ffteval.h}}
+
+
+\+: Header file for F\+FT evaluation  
+
+
+{\ttfamily \#include \char`\"{}stm32f3xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}arm\+\_\+math.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ffteval_8h_a636ddc19af00bc87969a07c88331f105}{F\+F\+T\+\_\+\+S\+I\+ZE}}~256
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{ffteval_8h_a61b3fcdb0f5f75f5cb02991c8719258f}{F\+F\+T\+\_\+\+Test}} (\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$)
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{ffteval_8h_a31e78d0ac16c2fbc903737e278348a31}{F\+F\+T\+\_\+\+Eval}} (\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$, uint16\+\_\+t $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\+: Header file for F\+FT evaluation 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ffteval_8h_a636ddc19af00bc87969a07c88331f105}\label{ffteval_8h_a636ddc19af00bc87969a07c88331f105}} 
+\index{ffteval.h@{ffteval.h}!FFT\_SIZE@{FFT\_SIZE}}
+\index{FFT\_SIZE@{FFT\_SIZE}!ffteval.h@{ffteval.h}}
+\subsubsection{\texorpdfstring{FFT\_SIZE}{FFT\_SIZE}}
+{\footnotesize\ttfamily \#define F\+F\+T\+\_\+\+S\+I\+ZE~256}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ffteval_8h_a31e78d0ac16c2fbc903737e278348a31}\label{ffteval_8h_a31e78d0ac16c2fbc903737e278348a31}} 
+\index{ffteval.h@{ffteval.h}!FFT\_Eval@{FFT\_Eval}}
+\index{FFT\_Eval@{FFT\_Eval}!ffteval.h@{ffteval.h}}
+\subsubsection{\texorpdfstring{FFT\_Eval()}{FFT\_Eval()}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ F\+F\+T\+\_\+\+Eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint16\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+Function evaluating F\+FT based on input vector of F\+F\+T\+\_\+\+S\+I\+Z\+E$\ast$2 samples. C\+M\+S\+IS D\+SP C\+F\+FT Q15 algotrithm is used. \mbox{\Hypertarget{ffteval_8h_a61b3fcdb0f5f75f5cb02991c8719258f}\label{ffteval_8h_a61b3fcdb0f5f75f5cb02991c8719258f}} 
+\index{ffteval.h@{ffteval.h}!FFT\_Test@{FFT\_Test}}
+\index{FFT\_Test@{FFT\_Test}!ffteval.h@{ffteval.h}}
+\subsubsection{\texorpdfstring{FFT\_Test()}{FFT\_Test()}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ F\+F\+T\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Function evaluating F\+FT based on input from test file. C\+M\+S\+IS D\+SP C\+F\+FT Q15 algotrithm is used. 

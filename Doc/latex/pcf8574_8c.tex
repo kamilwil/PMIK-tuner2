@@ -1,0 +1,77 @@
+\hypertarget{pcf8574_8c}{}\section{Src/pcf8574.c File Reference}
+\label{pcf8574_8c}\index{Src/pcf8574.c@{Src/pcf8574.c}}
+{\ttfamily \#include \char`\"{}pcf8574.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8c_a6f858372bee0a5a1690440809570befd}{P\+C\+F8574\+\_\+\+Init}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8c_a06a2a44d5c5b7a59100e4b8c92789aea}{P\+C\+F8574\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8c_ad654f02d253725144dea2bd67ec769fe}{P\+C\+F8574\+\_\+\+Write}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t val)
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8c_aefd68f9b6e4fd39dec4bf3f83f04f5d1}{P\+C\+F8574\+\_\+\+Read}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t $\ast$val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{pcf8574_8c_a06a2a44d5c5b7a59100e4b8c92789aea}\label{pcf8574_8c_a06a2a44d5c5b7a59100e4b8c92789aea}} 
+\index{pcf8574.c@{pcf8574.c}!PCF8574\_DeInit@{PCF8574\_DeInit}}
+\index{PCF8574\_DeInit@{PCF8574\_DeInit}!pcf8574.c@{pcf8574.c}}
+\subsubsection{\texorpdfstring{PCF8574\_DeInit()}{PCF8574\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Deinitializes the I2C 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pcf8574_8c_a6f858372bee0a5a1690440809570befd}\label{pcf8574_8c_a6f858372bee0a5a1690440809570befd}} 
+\index{pcf8574.c@{pcf8574.c}!PCF8574\_Init@{PCF8574\_Init}}
+\index{PCF8574\_Init@{PCF8574\_Init}!pcf8574.c@{pcf8574.c}}
+\subsubsection{\texorpdfstring{PCF8574\_Init()}{PCF8574\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Initializes the I2C for communication 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pcf8574_8c_aefd68f9b6e4fd39dec4bf3f83f04f5d1}\label{pcf8574_8c_aefd68f9b6e4fd39dec4bf3f83f04f5d1}} 
+\index{pcf8574.c@{pcf8574.c}!PCF8574\_Read@{PCF8574\_Read}}
+\index{PCF8574\_Read@{PCF8574\_Read}!pcf8574.c@{pcf8574.c}}
+\subsubsection{\texorpdfstring{PCF8574\_Read()}{PCF8574\_Read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+Reads the current state of the port of P\+C\+F8574 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+{\em val} & -\/ a pointer to the variable that will be assigned a value from the chip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pcf8574_8c_ad654f02d253725144dea2bd67ec769fe}\label{pcf8574_8c_ad654f02d253725144dea2bd67ec769fe}} 
+\index{pcf8574.c@{pcf8574.c}!PCF8574\_Write@{PCF8574\_Write}}
+\index{PCF8574\_Write@{PCF8574\_Write}!pcf8574.c@{pcf8574.c}}
+\subsubsection{\texorpdfstring{PCF8574\_Write()}{PCF8574\_Write()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+Writes a given value to the port of P\+C\+F8574 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+{\em val} & -\/ a value to be written to the port \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}

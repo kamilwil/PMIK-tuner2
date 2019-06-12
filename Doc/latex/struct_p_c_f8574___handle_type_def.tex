@@ -1,0 +1,52 @@
+\hypertarget{struct_p_c_f8574___handle_type_def}{}\section{P\+C\+F8574\+\_\+\+Handle\+Type\+Def Struct Reference}
+\label{struct_p_c_f8574___handle_type_def}\index{PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}}
+
+
+{\ttfamily \#include $<$pcf8574.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_p_c_f8574___handle_type_def_a6dffbcc6620a5fc10e355941f764b5e0}{P\+C\+F\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_p_c_f8574___handle_type_def_aab54a3fd634f0730d4181d8a079a6755}{P\+C\+F\+\_\+\+I2\+C\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\item 
+I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{struct_p_c_f8574___handle_type_def_adec15f46e6982891d5eddced4ef1f66b}{i2c}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_p_c_f8574___handle_type_def_a18b8cfd74756b1fc814b76bd113e55e8}{error\+Callback}} )(\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+C\+F8574 handle structure which wraps all the necessary variables together in order to simplify the communication with the chip 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_p_c_f8574___handle_type_def_a18b8cfd74756b1fc814b76bd113e55e8}\label{struct_p_c_f8574___handle_type_def_a18b8cfd74756b1fc814b76bd113e55e8}} 
+\index{PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}!errorCallback@{errorCallback}}
+\index{errorCallback@{errorCallback}!PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{errorCallback}{errorCallback}}
+{\footnotesize\ttfamily void($\ast$ error\+Callback) (\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}})}
+
+\mbox{\Hypertarget{struct_p_c_f8574___handle_type_def_adec15f46e6982891d5eddced4ef1f66b}\label{struct_p_c_f8574___handle_type_def_adec15f46e6982891d5eddced4ef1f66b}} 
+\index{PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}!i2c@{i2c}}
+\index{i2c@{i2c}!PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{i2c}{i2c}}
+{\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def i2c}
+
+I2\+C\+\_\+\+Handle\+Type\+Def structure \mbox{\Hypertarget{struct_p_c_f8574___handle_type_def_a6dffbcc6620a5fc10e355941f764b5e0}\label{struct_p_c_f8574___handle_type_def_a6dffbcc6620a5fc10e355941f764b5e0}} 
+\index{PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}!PCF\_I2C\_ADDRESS@{PCF\_I2C\_ADDRESS}}
+\index{PCF\_I2C\_ADDRESS@{PCF\_I2C\_ADDRESS}!PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{PCF\_I2C\_ADDRESS}{PCF\_I2C\_ADDRESS}}
+{\footnotesize\ttfamily uint8\+\_\+t P\+C\+F\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}
+
+address of the chip you want to communicate with \mbox{\Hypertarget{struct_p_c_f8574___handle_type_def_aab54a3fd634f0730d4181d8a079a6755}\label{struct_p_c_f8574___handle_type_def_aab54a3fd634f0730d4181d8a079a6755}} 
+\index{PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}!PCF\_I2C\_TIMEOUT@{PCF\_I2C\_TIMEOUT}}
+\index{PCF\_I2C\_TIMEOUT@{PCF\_I2C\_TIMEOUT}!PCF8574\_HandleTypeDef@{PCF8574\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{PCF\_I2C\_TIMEOUT}{PCF\_I2C\_TIMEOUT}}
+{\footnotesize\ttfamily uint32\+\_\+t P\+C\+F\+\_\+\+I2\+C\+\_\+\+T\+I\+M\+E\+O\+UT}
+
+timeout value for the communication in milliseconds 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{pcf8574_8h}{pcf8574.\+h}}\end{DoxyCompactItemize}

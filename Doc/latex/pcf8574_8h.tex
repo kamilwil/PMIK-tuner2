@@ -1,0 +1,146 @@
+\hypertarget{pcf8574_8h}{}\section{Inc/pcf8574.h File Reference}
+\label{pcf8574_8h}\index{Inc/pcf8574.h@{Inc/pcf8574.h}}
+
+
+In order to use this you have to create a \mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} variable (e.\+g. \char`\"{}pcf\char`\"{}). Then you will set the the address based on the configuration of your chip (pins A0, A1, A2) ( pcf.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS ) (0 to 7), timeout ( pcf.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+T\+I\+M\+E\+O\+UT ) (e.\+g. 1000 (=1 sec)), I2C instance to use ( pcf.\+i2c.\+Instance ) (e.\+g. I2\+C1 or I2\+C2 ...), speed of the communication ( pcf.\+i2c.\+Init.\+Clock\+Speed ) (e.\+g. 100 000 (=100k\+Hz)).  
+
+
+{\ttfamily \#include \char`\"{}stm32f3xx\+\_\+hal.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcf8574_8h_adec3cc60dd2b676f53c7c2883b528ef0}{P\+C\+F8574\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK}}~0x40
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \{ \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25ab3e80ac05337737d6e8feaab92df2526}{P\+C\+F8574\+\_\+\+OK}}, 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25a1d02f271b5126d02f29ba35e67fd387d}{P\+C\+F8574\+\_\+\+E\+R\+R\+OR}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8h_a6f858372bee0a5a1690440809570befd}{P\+C\+F8574\+\_\+\+Init}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8h_a06a2a44d5c5b7a59100e4b8c92789aea}{P\+C\+F8574\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8h_ad654f02d253725144dea2bd67ec769fe}{P\+C\+F8574\+\_\+\+Write}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t val)
+\item 
+\mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} \mbox{\hyperlink{pcf8574_8h_aefd68f9b6e4fd39dec4bf3f83f04f5d1}{P\+C\+F8574\+\_\+\+Read}} (\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint8\+\_\+t $\ast$val)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{pcf8574_8h_aeabe033424d43749449d76279e5f1d52}{P\+C\+F8574\+\_\+\+Type0\+Pins}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+In order to use this you have to create a \mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} variable (e.\+g. \char`\"{}pcf\char`\"{}). Then you will set the the address based on the configuration of your chip (pins A0, A1, A2) ( pcf.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS ) (0 to 7), timeout ( pcf.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+T\+I\+M\+E\+O\+UT ) (e.\+g. 1000 (=1 sec)), I2C instance to use ( pcf.\+i2c.\+Instance ) (e.\+g. I2\+C1 or I2\+C2 ...), speed of the communication ( pcf.\+i2c.\+Init.\+Clock\+Speed ) (e.\+g. 100 000 (=100k\+Hz)). 
+
+Example\+: example.\+c example\+\_\+msp.\+c 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pcf8574_8h_adec3cc60dd2b676f53c7c2883b528ef0}\label{pcf8574_8h_adec3cc60dd2b676f53c7c2883b528ef0}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_I2C\_ADDRESS\_MASK@{PCF8574\_I2C\_ADDRESS\_MASK}}
+\index{PCF8574\_I2C\_ADDRESS\_MASK@{PCF8574\_I2C\_ADDRESS\_MASK}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_I2C\_ADDRESS\_MASK}{PCF8574\_I2C\_ADDRESS\_MASK}}
+{\footnotesize\ttfamily \#define P\+C\+F8574\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+A\+SK~0x40}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}\label{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_RESULT@{PCF8574\_RESULT}}
+\index{PCF8574\_RESULT@{PCF8574\_RESULT}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_RESULT}{PCF8574\_RESULT}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}}}
+
+Provides possible return values for the functions \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PCF8574\_OK@{PCF8574\_OK}!pcf8574.h@{pcf8574.h}}\index{pcf8574.h@{pcf8574.h}!PCF8574\_OK@{PCF8574\_OK}}}\mbox{\Hypertarget{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25ab3e80ac05337737d6e8feaab92df2526}\label{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25ab3e80ac05337737d6e8feaab92df2526}} 
+P\+C\+F8574\+\_\+\+OK&Everything went OK \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PCF8574\_ERROR@{PCF8574\_ERROR}!pcf8574.h@{pcf8574.h}}\index{pcf8574.h@{pcf8574.h}!PCF8574\_ERROR@{PCF8574\_ERROR}}}\mbox{\Hypertarget{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25a1d02f271b5126d02f29ba35e67fd387d}\label{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25a1d02f271b5126d02f29ba35e67fd387d}} 
+P\+C\+F8574\+\_\+\+E\+R\+R\+OR&An error occured \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{pcf8574_8h_a06a2a44d5c5b7a59100e4b8c92789aea}\label{pcf8574_8h_a06a2a44d5c5b7a59100e4b8c92789aea}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_DeInit@{PCF8574\_DeInit}}
+\index{PCF8574\_DeInit@{PCF8574\_DeInit}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_DeInit()}{PCF8574\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Deinitializes the I2C 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pcf8574_8h_a6f858372bee0a5a1690440809570befd}\label{pcf8574_8h_a6f858372bee0a5a1690440809570befd}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_Init@{PCF8574\_Init}}
+\index{PCF8574\_Init@{PCF8574\_Init}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_Init()}{PCF8574\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Initializes the I2C for communication 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pcf8574_8h_aefd68f9b6e4fd39dec4bf3f83f04f5d1}\label{pcf8574_8h_aefd68f9b6e4fd39dec4bf3f83f04f5d1}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_Read@{PCF8574\_Read}}
+\index{PCF8574\_Read@{PCF8574\_Read}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_Read()}{PCF8574\_Read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+Reads the current state of the port of P\+C\+F8574 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+{\em val} & -\/ a pointer to the variable that will be assigned a value from the chip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pcf8574_8h_ad654f02d253725144dea2bd67ec769fe}\label{pcf8574_8h_ad654f02d253725144dea2bd67ec769fe}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_Write@{PCF8574\_Write}}
+\index{PCF8574\_Write@{PCF8574\_Write}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_Write()}{PCF8574\_Write()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pcf8574_8h_acb986b4815c5ba43b8c1800053f3ed25}{P\+C\+F8574\+\_\+\+R\+E\+S\+U\+LT}} P\+C\+F8574\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+Writes a given value to the port of P\+C\+F8574 
+\begin{DoxyParams}{Parameters}
+{\em handle} & -\/ a pointer to the P\+C\+F8574 handle \\
+\hline
+{\em val} & -\/ a value to be written to the port \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function was successful or not 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{pcf8574_8h_aeabe033424d43749449d76279e5f1d52}\label{pcf8574_8h_aeabe033424d43749449d76279e5f1d52}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_Type0Pins@{PCF8574\_Type0Pins}}
+\index{PCF8574\_Type0Pins@{PCF8574\_Type0Pins}!pcf8574.h@{pcf8574.h}}
+\subsubsection{\texorpdfstring{PCF8574\_Type0Pins}{PCF8574\_Type0Pins}}
+{\footnotesize\ttfamily uint32\+\_\+t P\+C\+F8574\+\_\+\+Type0\+Pins\mbox{[}$\,$\mbox{]}}
+

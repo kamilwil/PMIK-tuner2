@@ -1,0 +1,527 @@
+\hypertarget{main_8h}{}\section{Inc/main.h File Reference}
+\label{main_8h}\index{Inc/main.h@{Inc/main.h}}
+
+
+\+: Header for \mbox{\hyperlink{main_8c}{main.\+c}} file. This file contains the common defines of the application.  
+
+
+{\ttfamily \#include \char`\"{}stm32f3xx\+\_\+hal.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_a64fabfd82a688d97035dac40aa883d90}{D\+R\+D\+Y\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+2
+\item 
+\#define \mbox{\hyperlink{main_8h_a96bad62a00e285a6cafe5a6a60691d1d}{D\+R\+D\+Y\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a5dae5c66a2fb82ae243304f213f3eb2c}{C\+S\+\_\+\+I2\+C\+\_\+\+S\+P\+I\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_a7376069a8614f3df165407bb66f3bf96}{C\+S\+\_\+\+I2\+C\+\_\+\+S\+P\+I\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a7c63fd9183d94f3ea7bf9083d4901f94}{M\+E\+M\+S\+\_\+\+I\+N\+T3\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_a61b4d919a9b33d919f1bdfc9344490aa}{M\+E\+M\+S\+\_\+\+I\+N\+T3\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_affcfc93fbc37651bdc5d769cd9e6eef3}{M\+E\+M\+S\+\_\+\+I\+N\+T4\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_a43e8790c985f1ce1a1af526c4d64f79a}{M\+E\+M\+S\+\_\+\+I\+N\+T4\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_aaf68748564227540c27167c46b3f6e26}{O\+S\+C32\+\_\+\+I\+N\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_ac07e935018ad2c6921b2d4efee07de5b}{O\+S\+C32\+\_\+\+I\+N\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OC
+\item 
+\#define \mbox{\hyperlink{main_8h_a18c6adbfa5ba251e0035de1ab8759767}{O\+S\+C32\+\_\+\+O\+U\+T\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+15
+\item 
+\#define \mbox{\hyperlink{main_8h_aa6d4a7b9fbeffdfc292fda3a6ce6dcad}{O\+S\+C32\+\_\+\+O\+U\+T\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OC
+\item 
+\#define \mbox{\hyperlink{main_8h_a363ad7fb205680f1af009a3091dc3f7a}{O\+S\+C\+\_\+\+I\+N\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_af3f08c0d640164c48175314bba5da48a}{O\+S\+C\+\_\+\+I\+N\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OF
+\item 
+\#define \mbox{\hyperlink{main_8h_ad33432b95a8442eacddef186ba7f11fe}{O\+S\+C\+\_\+\+O\+U\+T\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_a4ab4af1723cbb18e17bb3d18daa90bfc}{O\+S\+C\+\_\+\+O\+U\+T\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OF
+\item 
+\#define \mbox{\hyperlink{main_8h_a31ac298fbbc8a1d6de1dc4577a108232}{B1\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_a4926b92dcb220e465850d9616c27e171}{B1\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_aebcdcae1a8e6c1c0ad51660908504fe2}{H\+C05\+\_\+\+E\+N\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+4
+\item 
+\#define \mbox{\hyperlink{main_8h_a902c68bd4c7db0b19149584097d771d1}{H\+C05\+\_\+\+E\+N\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_a4282a56cacbdee5eee2349b34e349e6b}{S\+P\+I1\+\_\+\+S\+C\+K\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+5
+\item 
+\#define \mbox{\hyperlink{main_8h_aab3c54e5a01694dbec8caf22db8a4cc0}{S\+P\+I1\+\_\+\+S\+C\+K\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_a9a4ecec51a21170be8c34706955c03ca}{S\+P\+I1\+\_\+\+M\+I\+S\+O\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_a35a9c248e29ddc8522e08a3940a96c76}{S\+P\+I1\+\_\+\+M\+I\+S\+O\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_ab5d7b3812cf7af4f7300589eb4f28915}{S\+P\+I1\+\_\+\+M\+I\+S\+O\+A7\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_a6bd37968decad80273b2aa438fa35c3e}{S\+P\+I1\+\_\+\+M\+I\+S\+O\+A7\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_a6664d0311f9f672b321e0daff34b7ad4}{L\+D4\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+8
+\item 
+\#define \mbox{\hyperlink{main_8h_a4cc05543336aab13c54fd6aa62fd4523}{L\+D4\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a71154fae0eacbdf882bd1481164f0652}{L\+D3\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+9
+\item 
+\#define \mbox{\hyperlink{main_8h_ae851c2d6146e6d4fac9f4a9983f5cf1f}{L\+D3\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_aee7b888dd4dbc9a801963f319ed98b11}{L\+D5\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+10
+\item 
+\#define \mbox{\hyperlink{main_8h_a58b48323bdbf7421c8d6e9e3e050ebad}{L\+D5\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a7de72b4668b9f12a3c5efd403313ade9}{L\+D7\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+11
+\item 
+\#define \mbox{\hyperlink{main_8h_ab3019b2d67fbd82a6645c30bc5d9cd99}{L\+D7\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a072de94ed46c0ea9c5f8b318be882630}{L\+D9\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+12
+\item 
+\#define \mbox{\hyperlink{main_8h_a344a108630300072319ca2eaa008d22c}{L\+D9\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a0221f2fa648e844913d3772cb62c2bd1}{L\+D10\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_aa4062a8cb46874ffa1d5034c4c09d0d8}{L\+D10\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_a1517cb6d231a8088339027155a1664e6}{L\+D8\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_a114ac95d45931f2ee222997b9e961e50}{L\+D8\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_af752fb7d74e778ecaf48784c6f2fa107}{L\+D6\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+15
+\item 
+\#define \mbox{\hyperlink{main_8h_a4154850b2c5b4cfc8bbdd4c3b5abd0eb}{L\+D6\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_ac4cbda74dce993c30b0447e2558b8fef}{D\+M\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+11
+\item 
+\#define \mbox{\hyperlink{main_8h_a599babe08c1d211ef010bffdf0b271a0}{D\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_aa938e0c6be99b3ee73639449a29b147d}{D\+P\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+12
+\item 
+\#define \mbox{\hyperlink{main_8h_a76eb1f8d2892a43da9c2764afa8ff35b}{D\+P\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_ac30893c7c5dd78cf02632dc653c3e74e}{S\+W\+D\+I\+O\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+13
+\item 
+\#define \mbox{\hyperlink{main_8h_a0d6c5c9d267a552e5bb02eb57498f683}{S\+W\+D\+I\+O\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_ad2e9165c92edc48968db01ca88c27822}{S\+W\+C\+L\+K\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+14
+\item 
+\#define \mbox{\hyperlink{main_8h_a54d419ccaa2653d1bceae3f1a7206890}{S\+W\+C\+L\+K\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OA
+\item 
+\#define \mbox{\hyperlink{main_8h_a92aba89301afeefb00b6dfbc6e874027}{S\+W\+O\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+3
+\item 
+\#define \mbox{\hyperlink{main_8h_a1540b1bd5614d42feb933c5b943263c0}{S\+W\+O\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{main_8h_a7ce1d02b54b96a926a0ed37f505b78d5}{I2\+C1\+\_\+\+S\+C\+L\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+6
+\item 
+\#define \mbox{\hyperlink{main_8h_af34c0ddf5cd70b52c83146965a86f724}{I2\+C1\+\_\+\+S\+C\+L\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{main_8h_a2c38021520f173695fd4b7841b12fb47}{I2\+C1\+\_\+\+S\+D\+A\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+7
+\item 
+\#define \mbox{\hyperlink{main_8h_a9c7d19288948a86b4a5e0c49d897b468}{I2\+C1\+\_\+\+S\+D\+A\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OB
+\item 
+\#define \mbox{\hyperlink{main_8h_a755084e6bd5147232273aa6ace5abbbb}{M\+E\+M\+S\+\_\+\+I\+N\+T1\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+0
+\item 
+\#define \mbox{\hyperlink{main_8h_a79cebc6bf90dc4267b459f8f41d724fc}{M\+E\+M\+S\+\_\+\+I\+N\+T1\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\item 
+\#define \mbox{\hyperlink{main_8h_aedae192e198dc4a023c277564019a424}{M\+E\+M\+S\+\_\+\+I\+N\+T2\+\_\+\+Pin}}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+1
+\item 
+\#define \mbox{\hyperlink{main_8h_a1595caf6a5809bd945b50aef66ea6705}{M\+E\+M\+S\+\_\+\+I\+N\+T2\+\_\+\+G\+P\+I\+O\+\_\+\+Port}}~G\+P\+I\+OE
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\+: Header for \mbox{\hyperlink{main_8c}{main.\+c}} file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} Copyright (c) 2019 S\+T\+Microelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under B\+SD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+B\+S\+D-\/3-\/\+Clause 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8h_a4926b92dcb220e465850d9616c27e171}\label{main_8h_a4926b92dcb220e465850d9616c27e171}} 
+\index{main.h@{main.h}!B1\_GPIO\_Port@{B1\_GPIO\_Port}}
+\index{B1\_GPIO\_Port@{B1\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{B1\_GPIO\_Port}{B1\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define B1\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_a31ac298fbbc8a1d6de1dc4577a108232}\label{main_8h_a31ac298fbbc8a1d6de1dc4577a108232}} 
+\index{main.h@{main.h}!B1\_Pin@{B1\_Pin}}
+\index{B1\_Pin@{B1\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{B1\_Pin}{B1\_Pin}}
+{\footnotesize\ttfamily \#define B1\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+0}
+
+\mbox{\Hypertarget{main_8h_a7376069a8614f3df165407bb66f3bf96}\label{main_8h_a7376069a8614f3df165407bb66f3bf96}} 
+\index{main.h@{main.h}!CS\_I2C\_SPI\_GPIO\_Port@{CS\_I2C\_SPI\_GPIO\_Port}}
+\index{CS\_I2C\_SPI\_GPIO\_Port@{CS\_I2C\_SPI\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{CS\_I2C\_SPI\_GPIO\_Port}{CS\_I2C\_SPI\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define C\+S\+\_\+\+I2\+C\+\_\+\+S\+P\+I\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a5dae5c66a2fb82ae243304f213f3eb2c}\label{main_8h_a5dae5c66a2fb82ae243304f213f3eb2c}} 
+\index{main.h@{main.h}!CS\_I2C\_SPI\_Pin@{CS\_I2C\_SPI\_Pin}}
+\index{CS\_I2C\_SPI\_Pin@{CS\_I2C\_SPI\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{CS\_I2C\_SPI\_Pin}{CS\_I2C\_SPI\_Pin}}
+{\footnotesize\ttfamily \#define C\+S\+\_\+\+I2\+C\+\_\+\+S\+P\+I\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+3}
+
+\mbox{\Hypertarget{main_8h_a599babe08c1d211ef010bffdf0b271a0}\label{main_8h_a599babe08c1d211ef010bffdf0b271a0}} 
+\index{main.h@{main.h}!DM\_GPIO\_Port@{DM\_GPIO\_Port}}
+\index{DM\_GPIO\_Port@{DM\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{DM\_GPIO\_Port}{DM\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define D\+M\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_ac4cbda74dce993c30b0447e2558b8fef}\label{main_8h_ac4cbda74dce993c30b0447e2558b8fef}} 
+\index{main.h@{main.h}!DM\_Pin@{DM\_Pin}}
+\index{DM\_Pin@{DM\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{DM\_Pin}{DM\_Pin}}
+{\footnotesize\ttfamily \#define D\+M\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+11}
+
+\mbox{\Hypertarget{main_8h_a76eb1f8d2892a43da9c2764afa8ff35b}\label{main_8h_a76eb1f8d2892a43da9c2764afa8ff35b}} 
+\index{main.h@{main.h}!DP\_GPIO\_Port@{DP\_GPIO\_Port}}
+\index{DP\_GPIO\_Port@{DP\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{DP\_GPIO\_Port}{DP\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define D\+P\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_aa938e0c6be99b3ee73639449a29b147d}\label{main_8h_aa938e0c6be99b3ee73639449a29b147d}} 
+\index{main.h@{main.h}!DP\_Pin@{DP\_Pin}}
+\index{DP\_Pin@{DP\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{DP\_Pin}{DP\_Pin}}
+{\footnotesize\ttfamily \#define D\+P\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+12}
+
+\mbox{\Hypertarget{main_8h_a96bad62a00e285a6cafe5a6a60691d1d}\label{main_8h_a96bad62a00e285a6cafe5a6a60691d1d}} 
+\index{main.h@{main.h}!DRDY\_GPIO\_Port@{DRDY\_GPIO\_Port}}
+\index{DRDY\_GPIO\_Port@{DRDY\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{DRDY\_GPIO\_Port}{DRDY\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define D\+R\+D\+Y\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a64fabfd82a688d97035dac40aa883d90}\label{main_8h_a64fabfd82a688d97035dac40aa883d90}} 
+\index{main.h@{main.h}!DRDY\_Pin@{DRDY\_Pin}}
+\index{DRDY\_Pin@{DRDY\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{DRDY\_Pin}{DRDY\_Pin}}
+{\footnotesize\ttfamily \#define D\+R\+D\+Y\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+2}
+
+\mbox{\Hypertarget{main_8h_a902c68bd4c7db0b19149584097d771d1}\label{main_8h_a902c68bd4c7db0b19149584097d771d1}} 
+\index{main.h@{main.h}!HC05\_EN\_GPIO\_Port@{HC05\_EN\_GPIO\_Port}}
+\index{HC05\_EN\_GPIO\_Port@{HC05\_EN\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{HC05\_EN\_GPIO\_Port}{HC05\_EN\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define H\+C05\+\_\+\+E\+N\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_aebcdcae1a8e6c1c0ad51660908504fe2}\label{main_8h_aebcdcae1a8e6c1c0ad51660908504fe2}} 
+\index{main.h@{main.h}!HC05\_EN\_Pin@{HC05\_EN\_Pin}}
+\index{HC05\_EN\_Pin@{HC05\_EN\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{HC05\_EN\_Pin}{HC05\_EN\_Pin}}
+{\footnotesize\ttfamily \#define H\+C05\+\_\+\+E\+N\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+4}
+
+\mbox{\Hypertarget{main_8h_af34c0ddf5cd70b52c83146965a86f724}\label{main_8h_af34c0ddf5cd70b52c83146965a86f724}} 
+\index{main.h@{main.h}!I2C1\_SCL\_GPIO\_Port@{I2C1\_SCL\_GPIO\_Port}}
+\index{I2C1\_SCL\_GPIO\_Port@{I2C1\_SCL\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{I2C1\_SCL\_GPIO\_Port}{I2C1\_SCL\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define I2\+C1\+\_\+\+S\+C\+L\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OB}
+
+\mbox{\Hypertarget{main_8h_a7ce1d02b54b96a926a0ed37f505b78d5}\label{main_8h_a7ce1d02b54b96a926a0ed37f505b78d5}} 
+\index{main.h@{main.h}!I2C1\_SCL\_Pin@{I2C1\_SCL\_Pin}}
+\index{I2C1\_SCL\_Pin@{I2C1\_SCL\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{I2C1\_SCL\_Pin}{I2C1\_SCL\_Pin}}
+{\footnotesize\ttfamily \#define I2\+C1\+\_\+\+S\+C\+L\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+6}
+
+\mbox{\Hypertarget{main_8h_a9c7d19288948a86b4a5e0c49d897b468}\label{main_8h_a9c7d19288948a86b4a5e0c49d897b468}} 
+\index{main.h@{main.h}!I2C1\_SDA\_GPIO\_Port@{I2C1\_SDA\_GPIO\_Port}}
+\index{I2C1\_SDA\_GPIO\_Port@{I2C1\_SDA\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{I2C1\_SDA\_GPIO\_Port}{I2C1\_SDA\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define I2\+C1\+\_\+\+S\+D\+A\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OB}
+
+\mbox{\Hypertarget{main_8h_a2c38021520f173695fd4b7841b12fb47}\label{main_8h_a2c38021520f173695fd4b7841b12fb47}} 
+\index{main.h@{main.h}!I2C1\_SDA\_Pin@{I2C1\_SDA\_Pin}}
+\index{I2C1\_SDA\_Pin@{I2C1\_SDA\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{I2C1\_SDA\_Pin}{I2C1\_SDA\_Pin}}
+{\footnotesize\ttfamily \#define I2\+C1\+\_\+\+S\+D\+A\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+7}
+
+\mbox{\Hypertarget{main_8h_aa4062a8cb46874ffa1d5034c4c09d0d8}\label{main_8h_aa4062a8cb46874ffa1d5034c4c09d0d8}} 
+\index{main.h@{main.h}!LD10\_GPIO\_Port@{LD10\_GPIO\_Port}}
+\index{LD10\_GPIO\_Port@{LD10\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD10\_GPIO\_Port}{LD10\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D10\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a0221f2fa648e844913d3772cb62c2bd1}\label{main_8h_a0221f2fa648e844913d3772cb62c2bd1}} 
+\index{main.h@{main.h}!LD10\_Pin@{LD10\_Pin}}
+\index{LD10\_Pin@{LD10\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD10\_Pin}{LD10\_Pin}}
+{\footnotesize\ttfamily \#define L\+D10\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+13}
+
+\mbox{\Hypertarget{main_8h_ae851c2d6146e6d4fac9f4a9983f5cf1f}\label{main_8h_ae851c2d6146e6d4fac9f4a9983f5cf1f}} 
+\index{main.h@{main.h}!LD3\_GPIO\_Port@{LD3\_GPIO\_Port}}
+\index{LD3\_GPIO\_Port@{LD3\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD3\_GPIO\_Port}{LD3\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D3\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a71154fae0eacbdf882bd1481164f0652}\label{main_8h_a71154fae0eacbdf882bd1481164f0652}} 
+\index{main.h@{main.h}!LD3\_Pin@{LD3\_Pin}}
+\index{LD3\_Pin@{LD3\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD3\_Pin}{LD3\_Pin}}
+{\footnotesize\ttfamily \#define L\+D3\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+9}
+
+\mbox{\Hypertarget{main_8h_a4cc05543336aab13c54fd6aa62fd4523}\label{main_8h_a4cc05543336aab13c54fd6aa62fd4523}} 
+\index{main.h@{main.h}!LD4\_GPIO\_Port@{LD4\_GPIO\_Port}}
+\index{LD4\_GPIO\_Port@{LD4\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD4\_GPIO\_Port}{LD4\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D4\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a6664d0311f9f672b321e0daff34b7ad4}\label{main_8h_a6664d0311f9f672b321e0daff34b7ad4}} 
+\index{main.h@{main.h}!LD4\_Pin@{LD4\_Pin}}
+\index{LD4\_Pin@{LD4\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD4\_Pin}{LD4\_Pin}}
+{\footnotesize\ttfamily \#define L\+D4\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+8}
+
+\mbox{\Hypertarget{main_8h_a58b48323bdbf7421c8d6e9e3e050ebad}\label{main_8h_a58b48323bdbf7421c8d6e9e3e050ebad}} 
+\index{main.h@{main.h}!LD5\_GPIO\_Port@{LD5\_GPIO\_Port}}
+\index{LD5\_GPIO\_Port@{LD5\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD5\_GPIO\_Port}{LD5\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D5\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_aee7b888dd4dbc9a801963f319ed98b11}\label{main_8h_aee7b888dd4dbc9a801963f319ed98b11}} 
+\index{main.h@{main.h}!LD5\_Pin@{LD5\_Pin}}
+\index{LD5\_Pin@{LD5\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD5\_Pin}{LD5\_Pin}}
+{\footnotesize\ttfamily \#define L\+D5\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+10}
+
+\mbox{\Hypertarget{main_8h_a4154850b2c5b4cfc8bbdd4c3b5abd0eb}\label{main_8h_a4154850b2c5b4cfc8bbdd4c3b5abd0eb}} 
+\index{main.h@{main.h}!LD6\_GPIO\_Port@{LD6\_GPIO\_Port}}
+\index{LD6\_GPIO\_Port@{LD6\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD6\_GPIO\_Port}{LD6\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D6\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_af752fb7d74e778ecaf48784c6f2fa107}\label{main_8h_af752fb7d74e778ecaf48784c6f2fa107}} 
+\index{main.h@{main.h}!LD6\_Pin@{LD6\_Pin}}
+\index{LD6\_Pin@{LD6\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD6\_Pin}{LD6\_Pin}}
+{\footnotesize\ttfamily \#define L\+D6\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+15}
+
+\mbox{\Hypertarget{main_8h_ab3019b2d67fbd82a6645c30bc5d9cd99}\label{main_8h_ab3019b2d67fbd82a6645c30bc5d9cd99}} 
+\index{main.h@{main.h}!LD7\_GPIO\_Port@{LD7\_GPIO\_Port}}
+\index{LD7\_GPIO\_Port@{LD7\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD7\_GPIO\_Port}{LD7\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D7\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a7de72b4668b9f12a3c5efd403313ade9}\label{main_8h_a7de72b4668b9f12a3c5efd403313ade9}} 
+\index{main.h@{main.h}!LD7\_Pin@{LD7\_Pin}}
+\index{LD7\_Pin@{LD7\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD7\_Pin}{LD7\_Pin}}
+{\footnotesize\ttfamily \#define L\+D7\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+11}
+
+\mbox{\Hypertarget{main_8h_a114ac95d45931f2ee222997b9e961e50}\label{main_8h_a114ac95d45931f2ee222997b9e961e50}} 
+\index{main.h@{main.h}!LD8\_GPIO\_Port@{LD8\_GPIO\_Port}}
+\index{LD8\_GPIO\_Port@{LD8\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD8\_GPIO\_Port}{LD8\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D8\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a1517cb6d231a8088339027155a1664e6}\label{main_8h_a1517cb6d231a8088339027155a1664e6}} 
+\index{main.h@{main.h}!LD8\_Pin@{LD8\_Pin}}
+\index{LD8\_Pin@{LD8\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD8\_Pin}{LD8\_Pin}}
+{\footnotesize\ttfamily \#define L\+D8\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+14}
+
+\mbox{\Hypertarget{main_8h_a344a108630300072319ca2eaa008d22c}\label{main_8h_a344a108630300072319ca2eaa008d22c}} 
+\index{main.h@{main.h}!LD9\_GPIO\_Port@{LD9\_GPIO\_Port}}
+\index{LD9\_GPIO\_Port@{LD9\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD9\_GPIO\_Port}{LD9\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define L\+D9\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a072de94ed46c0ea9c5f8b318be882630}\label{main_8h_a072de94ed46c0ea9c5f8b318be882630}} 
+\index{main.h@{main.h}!LD9\_Pin@{LD9\_Pin}}
+\index{LD9\_Pin@{LD9\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{LD9\_Pin}{LD9\_Pin}}
+{\footnotesize\ttfamily \#define L\+D9\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+12}
+
+\mbox{\Hypertarget{main_8h_a79cebc6bf90dc4267b459f8f41d724fc}\label{main_8h_a79cebc6bf90dc4267b459f8f41d724fc}} 
+\index{main.h@{main.h}!MEMS\_INT1\_GPIO\_Port@{MEMS\_INT1\_GPIO\_Port}}
+\index{MEMS\_INT1\_GPIO\_Port@{MEMS\_INT1\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT1\_GPIO\_Port}{MEMS\_INT1\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T1\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a755084e6bd5147232273aa6ace5abbbb}\label{main_8h_a755084e6bd5147232273aa6ace5abbbb}} 
+\index{main.h@{main.h}!MEMS\_INT1\_Pin@{MEMS\_INT1\_Pin}}
+\index{MEMS\_INT1\_Pin@{MEMS\_INT1\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT1\_Pin}{MEMS\_INT1\_Pin}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T1\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+0}
+
+\mbox{\Hypertarget{main_8h_a1595caf6a5809bd945b50aef66ea6705}\label{main_8h_a1595caf6a5809bd945b50aef66ea6705}} 
+\index{main.h@{main.h}!MEMS\_INT2\_GPIO\_Port@{MEMS\_INT2\_GPIO\_Port}}
+\index{MEMS\_INT2\_GPIO\_Port@{MEMS\_INT2\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT2\_GPIO\_Port}{MEMS\_INT2\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T2\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_aedae192e198dc4a023c277564019a424}\label{main_8h_aedae192e198dc4a023c277564019a424}} 
+\index{main.h@{main.h}!MEMS\_INT2\_Pin@{MEMS\_INT2\_Pin}}
+\index{MEMS\_INT2\_Pin@{MEMS\_INT2\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT2\_Pin}{MEMS\_INT2\_Pin}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T2\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+1}
+
+\mbox{\Hypertarget{main_8h_a61b4d919a9b33d919f1bdfc9344490aa}\label{main_8h_a61b4d919a9b33d919f1bdfc9344490aa}} 
+\index{main.h@{main.h}!MEMS\_INT3\_GPIO\_Port@{MEMS\_INT3\_GPIO\_Port}}
+\index{MEMS\_INT3\_GPIO\_Port@{MEMS\_INT3\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT3\_GPIO\_Port}{MEMS\_INT3\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T3\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_a7c63fd9183d94f3ea7bf9083d4901f94}\label{main_8h_a7c63fd9183d94f3ea7bf9083d4901f94}} 
+\index{main.h@{main.h}!MEMS\_INT3\_Pin@{MEMS\_INT3\_Pin}}
+\index{MEMS\_INT3\_Pin@{MEMS\_INT3\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT3\_Pin}{MEMS\_INT3\_Pin}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T3\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+4}
+
+\mbox{\Hypertarget{main_8h_a43e8790c985f1ce1a1af526c4d64f79a}\label{main_8h_a43e8790c985f1ce1a1af526c4d64f79a}} 
+\index{main.h@{main.h}!MEMS\_INT4\_GPIO\_Port@{MEMS\_INT4\_GPIO\_Port}}
+\index{MEMS\_INT4\_GPIO\_Port@{MEMS\_INT4\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT4\_GPIO\_Port}{MEMS\_INT4\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T4\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OE}
+
+\mbox{\Hypertarget{main_8h_affcfc93fbc37651bdc5d769cd9e6eef3}\label{main_8h_affcfc93fbc37651bdc5d769cd9e6eef3}} 
+\index{main.h@{main.h}!MEMS\_INT4\_Pin@{MEMS\_INT4\_Pin}}
+\index{MEMS\_INT4\_Pin@{MEMS\_INT4\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{MEMS\_INT4\_Pin}{MEMS\_INT4\_Pin}}
+{\footnotesize\ttfamily \#define M\+E\+M\+S\+\_\+\+I\+N\+T4\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+5}
+
+\mbox{\Hypertarget{main_8h_ac07e935018ad2c6921b2d4efee07de5b}\label{main_8h_ac07e935018ad2c6921b2d4efee07de5b}} 
+\index{main.h@{main.h}!OSC32\_IN\_GPIO\_Port@{OSC32\_IN\_GPIO\_Port}}
+\index{OSC32\_IN\_GPIO\_Port@{OSC32\_IN\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC32\_IN\_GPIO\_Port}{OSC32\_IN\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define O\+S\+C32\+\_\+\+I\+N\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OC}
+
+\mbox{\Hypertarget{main_8h_aaf68748564227540c27167c46b3f6e26}\label{main_8h_aaf68748564227540c27167c46b3f6e26}} 
+\index{main.h@{main.h}!OSC32\_IN\_Pin@{OSC32\_IN\_Pin}}
+\index{OSC32\_IN\_Pin@{OSC32\_IN\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC32\_IN\_Pin}{OSC32\_IN\_Pin}}
+{\footnotesize\ttfamily \#define O\+S\+C32\+\_\+\+I\+N\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+14}
+
+\mbox{\Hypertarget{main_8h_aa6d4a7b9fbeffdfc292fda3a6ce6dcad}\label{main_8h_aa6d4a7b9fbeffdfc292fda3a6ce6dcad}} 
+\index{main.h@{main.h}!OSC32\_OUT\_GPIO\_Port@{OSC32\_OUT\_GPIO\_Port}}
+\index{OSC32\_OUT\_GPIO\_Port@{OSC32\_OUT\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC32\_OUT\_GPIO\_Port}{OSC32\_OUT\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define O\+S\+C32\+\_\+\+O\+U\+T\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OC}
+
+\mbox{\Hypertarget{main_8h_a18c6adbfa5ba251e0035de1ab8759767}\label{main_8h_a18c6adbfa5ba251e0035de1ab8759767}} 
+\index{main.h@{main.h}!OSC32\_OUT\_Pin@{OSC32\_OUT\_Pin}}
+\index{OSC32\_OUT\_Pin@{OSC32\_OUT\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC32\_OUT\_Pin}{OSC32\_OUT\_Pin}}
+{\footnotesize\ttfamily \#define O\+S\+C32\+\_\+\+O\+U\+T\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+15}
+
+\mbox{\Hypertarget{main_8h_af3f08c0d640164c48175314bba5da48a}\label{main_8h_af3f08c0d640164c48175314bba5da48a}} 
+\index{main.h@{main.h}!OSC\_IN\_GPIO\_Port@{OSC\_IN\_GPIO\_Port}}
+\index{OSC\_IN\_GPIO\_Port@{OSC\_IN\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC\_IN\_GPIO\_Port}{OSC\_IN\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define O\+S\+C\+\_\+\+I\+N\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OF}
+
+\mbox{\Hypertarget{main_8h_a363ad7fb205680f1af009a3091dc3f7a}\label{main_8h_a363ad7fb205680f1af009a3091dc3f7a}} 
+\index{main.h@{main.h}!OSC\_IN\_Pin@{OSC\_IN\_Pin}}
+\index{OSC\_IN\_Pin@{OSC\_IN\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC\_IN\_Pin}{OSC\_IN\_Pin}}
+{\footnotesize\ttfamily \#define O\+S\+C\+\_\+\+I\+N\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+0}
+
+\mbox{\Hypertarget{main_8h_a4ab4af1723cbb18e17bb3d18daa90bfc}\label{main_8h_a4ab4af1723cbb18e17bb3d18daa90bfc}} 
+\index{main.h@{main.h}!OSC\_OUT\_GPIO\_Port@{OSC\_OUT\_GPIO\_Port}}
+\index{OSC\_OUT\_GPIO\_Port@{OSC\_OUT\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC\_OUT\_GPIO\_Port}{OSC\_OUT\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define O\+S\+C\+\_\+\+O\+U\+T\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OF}
+
+\mbox{\Hypertarget{main_8h_ad33432b95a8442eacddef186ba7f11fe}\label{main_8h_ad33432b95a8442eacddef186ba7f11fe}} 
+\index{main.h@{main.h}!OSC\_OUT\_Pin@{OSC\_OUT\_Pin}}
+\index{OSC\_OUT\_Pin@{OSC\_OUT\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{OSC\_OUT\_Pin}{OSC\_OUT\_Pin}}
+{\footnotesize\ttfamily \#define O\+S\+C\+\_\+\+O\+U\+T\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+1}
+
+\mbox{\Hypertarget{main_8h_a35a9c248e29ddc8522e08a3940a96c76}\label{main_8h_a35a9c248e29ddc8522e08a3940a96c76}} 
+\index{main.h@{main.h}!SPI1\_MISO\_GPIO\_Port@{SPI1\_MISO\_GPIO\_Port}}
+\index{SPI1\_MISO\_GPIO\_Port@{SPI1\_MISO\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SPI1\_MISO\_GPIO\_Port}{SPI1\_MISO\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define S\+P\+I1\+\_\+\+M\+I\+S\+O\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_a9a4ecec51a21170be8c34706955c03ca}\label{main_8h_a9a4ecec51a21170be8c34706955c03ca}} 
+\index{main.h@{main.h}!SPI1\_MISO\_Pin@{SPI1\_MISO\_Pin}}
+\index{SPI1\_MISO\_Pin@{SPI1\_MISO\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SPI1\_MISO\_Pin}{SPI1\_MISO\_Pin}}
+{\footnotesize\ttfamily \#define S\+P\+I1\+\_\+\+M\+I\+S\+O\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+6}
+
+\mbox{\Hypertarget{main_8h_a6bd37968decad80273b2aa438fa35c3e}\label{main_8h_a6bd37968decad80273b2aa438fa35c3e}} 
+\index{main.h@{main.h}!SPI1\_MISOA7\_GPIO\_Port@{SPI1\_MISOA7\_GPIO\_Port}}
+\index{SPI1\_MISOA7\_GPIO\_Port@{SPI1\_MISOA7\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SPI1\_MISOA7\_GPIO\_Port}{SPI1\_MISOA7\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define S\+P\+I1\+\_\+\+M\+I\+S\+O\+A7\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_ab5d7b3812cf7af4f7300589eb4f28915}\label{main_8h_ab5d7b3812cf7af4f7300589eb4f28915}} 
+\index{main.h@{main.h}!SPI1\_MISOA7\_Pin@{SPI1\_MISOA7\_Pin}}
+\index{SPI1\_MISOA7\_Pin@{SPI1\_MISOA7\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SPI1\_MISOA7\_Pin}{SPI1\_MISOA7\_Pin}}
+{\footnotesize\ttfamily \#define S\+P\+I1\+\_\+\+M\+I\+S\+O\+A7\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+7}
+
+\mbox{\Hypertarget{main_8h_aab3c54e5a01694dbec8caf22db8a4cc0}\label{main_8h_aab3c54e5a01694dbec8caf22db8a4cc0}} 
+\index{main.h@{main.h}!SPI1\_SCK\_GPIO\_Port@{SPI1\_SCK\_GPIO\_Port}}
+\index{SPI1\_SCK\_GPIO\_Port@{SPI1\_SCK\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SPI1\_SCK\_GPIO\_Port}{SPI1\_SCK\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define S\+P\+I1\+\_\+\+S\+C\+K\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_a4282a56cacbdee5eee2349b34e349e6b}\label{main_8h_a4282a56cacbdee5eee2349b34e349e6b}} 
+\index{main.h@{main.h}!SPI1\_SCK\_Pin@{SPI1\_SCK\_Pin}}
+\index{SPI1\_SCK\_Pin@{SPI1\_SCK\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SPI1\_SCK\_Pin}{SPI1\_SCK\_Pin}}
+{\footnotesize\ttfamily \#define S\+P\+I1\+\_\+\+S\+C\+K\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+5}
+
+\mbox{\Hypertarget{main_8h_a54d419ccaa2653d1bceae3f1a7206890}\label{main_8h_a54d419ccaa2653d1bceae3f1a7206890}} 
+\index{main.h@{main.h}!SWCLK\_GPIO\_Port@{SWCLK\_GPIO\_Port}}
+\index{SWCLK\_GPIO\_Port@{SWCLK\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SWCLK\_GPIO\_Port}{SWCLK\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define S\+W\+C\+L\+K\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_ad2e9165c92edc48968db01ca88c27822}\label{main_8h_ad2e9165c92edc48968db01ca88c27822}} 
+\index{main.h@{main.h}!SWCLK\_Pin@{SWCLK\_Pin}}
+\index{SWCLK\_Pin@{SWCLK\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SWCLK\_Pin}{SWCLK\_Pin}}
+{\footnotesize\ttfamily \#define S\+W\+C\+L\+K\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+14}
+
+\mbox{\Hypertarget{main_8h_a0d6c5c9d267a552e5bb02eb57498f683}\label{main_8h_a0d6c5c9d267a552e5bb02eb57498f683}} 
+\index{main.h@{main.h}!SWDIO\_GPIO\_Port@{SWDIO\_GPIO\_Port}}
+\index{SWDIO\_GPIO\_Port@{SWDIO\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SWDIO\_GPIO\_Port}{SWDIO\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define S\+W\+D\+I\+O\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OA}
+
+\mbox{\Hypertarget{main_8h_ac30893c7c5dd78cf02632dc653c3e74e}\label{main_8h_ac30893c7c5dd78cf02632dc653c3e74e}} 
+\index{main.h@{main.h}!SWDIO\_Pin@{SWDIO\_Pin}}
+\index{SWDIO\_Pin@{SWDIO\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SWDIO\_Pin}{SWDIO\_Pin}}
+{\footnotesize\ttfamily \#define S\+W\+D\+I\+O\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+13}
+
+\mbox{\Hypertarget{main_8h_a1540b1bd5614d42feb933c5b943263c0}\label{main_8h_a1540b1bd5614d42feb933c5b943263c0}} 
+\index{main.h@{main.h}!SWO\_GPIO\_Port@{SWO\_GPIO\_Port}}
+\index{SWO\_GPIO\_Port@{SWO\_GPIO\_Port}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SWO\_GPIO\_Port}{SWO\_GPIO\_Port}}
+{\footnotesize\ttfamily \#define S\+W\+O\+\_\+\+G\+P\+I\+O\+\_\+\+Port~G\+P\+I\+OB}
+
+\mbox{\Hypertarget{main_8h_a92aba89301afeefb00b6dfbc6e874027}\label{main_8h_a92aba89301afeefb00b6dfbc6e874027}} 
+\index{main.h@{main.h}!SWO\_Pin@{SWO\_Pin}}
+\index{SWO\_Pin@{SWO\_Pin}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{SWO\_Pin}{SWO\_Pin}}
+{\footnotesize\ttfamily \#define S\+W\+O\+\_\+\+Pin~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+3}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8h_a1730ffe1e560465665eb47d9264826f9}\label{main_8h_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.h@{main.h}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

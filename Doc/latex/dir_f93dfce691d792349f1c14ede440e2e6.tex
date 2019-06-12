@@ -1,0 +1,23 @@
+\hypertarget{dir_f93dfce691d792349f1c14ede440e2e6}{}\section{Inc Directory Reference}
+\label{dir_f93dfce691d792349f1c14ede440e2e6}\index{Inc Directory Reference@{Inc Directory Reference}}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{_f_f_t__test1_8inc}{F\+F\+T\+\_\+test1.\+inc}}
+\item 
+file \mbox{\hyperlink{_f_f_t__test2_8inc}{F\+F\+T\+\_\+test2.\+inc}}
+\item 
+file \mbox{\hyperlink{_f_f_t__test3_8inc}{F\+F\+T\+\_\+test3.\+inc}}
+\item 
+file \mbox{\hyperlink{ffteval_8h}{ffteval.\+h}}
+\begin{DoxyCompactList}\small\item\em \+: Header file for F\+FT evaluation \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{hd44780_8h}{hd44780.\+h}}
+\begin{DoxyCompactList}\small\item\em Header file for communication with the H\+D44780 L\+CD driver. To use it you will have to create a variable of type \mbox{\hyperlink{struct_l_c_d___p_c_f8574___handle_type_def}{L\+C\+D\+\_\+\+P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} (e.\+g. \char`\"{}lcd\char`\"{}) and then set the I2C address based on the address pins on your P\+C\+F8574 (0-\/7) (lcd.\+pcf8574.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS), set the I2C timeout (in milliseconds) (lcd.\+pcf8574.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+T\+I\+M\+E\+O\+UT), set the I2C instance (e.\+g. I2\+C1 or I2\+C2) (lcd.\+pcf8574.\+i2c.\+Instance), set the I2C clock speed (in Hertz) (lcd.\+pcf8574.\+i2c.\+Init.\+Clock\+Speed), set the number of lines (has to be type of L\+C\+D\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+I\+N\+ES) (lcd.\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+I\+N\+ES), set the interface type (has to be type of L\+C\+D\+\_\+\+T\+Y\+PE) (lcd.\+type). \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{main_8h}{main.\+h}}
+\begin{DoxyCompactList}\small\item\em \+: Header for \mbox{\hyperlink{main_8c}{main.\+c}} file. This file contains the common defines of the application. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{pcf8574_8h}{pcf8574.\+h}}
+\begin{DoxyCompactList}\small\item\em In order to use this you have to create a \mbox{\hyperlink{struct_p_c_f8574___handle_type_def}{P\+C\+F8574\+\_\+\+Handle\+Type\+Def}} variable (e.\+g. \char`\"{}pcf\char`\"{}). Then you will set the the address based on the configuration of your chip (pins A0, A1, A2) ( pcf.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS ) (0 to 7), timeout ( pcf.\+P\+C\+F\+\_\+\+I2\+C\+\_\+\+T\+I\+M\+E\+O\+UT ) (e.\+g. 1000 (=1 sec)), I2C instance to use ( pcf.\+i2c.\+Instance ) (e.\+g. I2\+C1 or I2\+C2 ...), speed of the communication ( pcf.\+i2c.\+Init.\+Clock\+Speed ) (e.\+g. 100 000 (=100k\+Hz)). \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{stm32f3xx__hal__conf_8h}{stm32f3xx\+\_\+hal\+\_\+conf.\+h}}
+\begin{DoxyCompactList}\small\item\em H\+AL configuration file. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{stm32f3xx__it_8h}{stm32f3xx\+\_\+it.\+h}}
+\begin{DoxyCompactList}\small\item\em This file contains the headers of the interrupt handlers. \end{DoxyCompactList}\end{DoxyCompactItemize}

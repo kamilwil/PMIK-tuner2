@@ -1,0 +1,37 @@
+\hypertarget{ffteval_8c}{}\section{Src/ffteval.c File Reference}
+\label{ffteval_8c}\index{Src/ffteval.c@{Src/ffteval.c}}
+
+
+\+: Encapsulated function for F\+FT evaluation.  
+
+
+{\ttfamily \#include \char`\"{}ffteval.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}F\+F\+T\+\_\+test2.\+inc\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{ffteval_8c_a8d64035118d964ce46177041e37f2bb0}{F\+F\+T\+\_\+\+Test}} (\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$handle)
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{ffteval_8c_a599c51e26e9ea3c2a8c696fae1aa14e6}{F\+F\+T\+\_\+\+Eval}} (\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$handle, uint16\+\_\+t $\ast$val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\+: Encapsulated function for F\+FT evaluation. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ffteval_8c_a599c51e26e9ea3c2a8c696fae1aa14e6}\label{ffteval_8c_a599c51e26e9ea3c2a8c696fae1aa14e6}} 
+\index{ffteval.c@{ffteval.c}!FFT\_Eval@{FFT\_Eval}}
+\index{FFT\_Eval@{FFT\_Eval}!ffteval.c@{ffteval.c}}
+\subsubsection{\texorpdfstring{FFT\_Eval()}{FFT\_Eval()}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ F\+F\+T\+\_\+\+Eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle,  }\item[{uint16\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+Function evaluating F\+FT based on input vector of F\+F\+T\+\_\+\+S\+I\+Z\+E$\ast$2 samples. C\+M\+S\+IS D\+SP C\+F\+FT Q15 algotrithm is used. \mbox{\Hypertarget{ffteval_8c_a8d64035118d964ce46177041e37f2bb0}\label{ffteval_8c_a8d64035118d964ce46177041e37f2bb0}} 
+\index{ffteval.c@{ffteval.c}!FFT\_Test@{FFT\_Test}}
+\index{FFT\_Test@{FFT\_Test}!ffteval.c@{ffteval.c}}
+\subsubsection{\texorpdfstring{FFT\_Test()}{FFT\_Test()}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ F\+F\+T\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_f_t___handle_type_def}{F\+F\+T\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+Function evaluating F\+FT based on input from test file. C\+M\+S\+IS D\+SP C\+F\+FT Q15 algotrithm is used. 

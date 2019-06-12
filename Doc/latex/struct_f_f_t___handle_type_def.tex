@@ -1,0 +1,52 @@
+\hypertarget{struct_f_f_t___handle_type_def}{}\section{F\+F\+T\+\_\+\+Handle\+Type\+Def Struct Reference}
+\label{struct_f_f_t___handle_type_def}\index{FFT\_HandleTypeDef@{FFT\_HandleTypeDef}}
+
+
+{\ttfamily \#include $<$ffteval.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+q15\+\_\+t $\ast$ \mbox{\hyperlink{struct_f_f_t___handle_type_def_a24274da1b2fa0789d9f7f8c31f7ee6d5}{fft\+\_\+input}}
+\item 
+arm\+\_\+rfft\+\_\+instance\+\_\+q15 \mbox{\hyperlink{struct_f_f_t___handle_type_def_a64ff6ded404718f6b0734ec3cb38c3a4}{fft\+\_\+instance}}
+\item 
+q15\+\_\+t \mbox{\hyperlink{struct_f_f_t___handle_type_def_a4df5ed415a14ec57648a1be3631fa492}{fft\+\_\+output}} \mbox{[}\mbox{\hyperlink{ffteval_8h_a636ddc19af00bc87969a07c88331f105}{F\+F\+T\+\_\+\+S\+I\+ZE}} $\ast$2\mbox{]}
+\item 
+arm\+\_\+status \mbox{\hyperlink{struct_f_f_t___handle_type_def_ab9552d91d6391e1b36e767bf5c127bb8}{fft\+\_\+status}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure containing all necessary data for F\+FT evaluation 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_f_t___handle_type_def_a24274da1b2fa0789d9f7f8c31f7ee6d5}\label{struct_f_f_t___handle_type_def_a24274da1b2fa0789d9f7f8c31f7ee6d5}} 
+\index{FFT\_HandleTypeDef@{FFT\_HandleTypeDef}!fft\_input@{fft\_input}}
+\index{fft\_input@{fft\_input}!FFT\_HandleTypeDef@{FFT\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{fft\_input}{fft\_input}}
+{\footnotesize\ttfamily q15\+\_\+t$\ast$ fft\+\_\+input}
+
+Input vector (either from testfile or from D\+MA output buffer \mbox{\Hypertarget{struct_f_f_t___handle_type_def_a64ff6ded404718f6b0734ec3cb38c3a4}\label{struct_f_f_t___handle_type_def_a64ff6ded404718f6b0734ec3cb38c3a4}} 
+\index{FFT\_HandleTypeDef@{FFT\_HandleTypeDef}!fft\_instance@{fft\_instance}}
+\index{fft\_instance@{fft\_instance}!FFT\_HandleTypeDef@{FFT\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{fft\_instance}{fft\_instance}}
+{\footnotesize\ttfamily arm\+\_\+rfft\+\_\+instance\+\_\+q15 fft\+\_\+instance}
+
+Data block necessary for computations \mbox{\Hypertarget{struct_f_f_t___handle_type_def_a4df5ed415a14ec57648a1be3631fa492}\label{struct_f_f_t___handle_type_def_a4df5ed415a14ec57648a1be3631fa492}} 
+\index{FFT\_HandleTypeDef@{FFT\_HandleTypeDef}!fft\_output@{fft\_output}}
+\index{fft\_output@{fft\_output}!FFT\_HandleTypeDef@{FFT\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{fft\_output}{fft\_output}}
+{\footnotesize\ttfamily q15\+\_\+t fft\+\_\+output\mbox{[}\mbox{\hyperlink{ffteval_8h_a636ddc19af00bc87969a07c88331f105}{F\+F\+T\+\_\+\+S\+I\+ZE}} $\ast$2\mbox{]}}
+
+Output vector which is later researched for maximum value \mbox{\Hypertarget{struct_f_f_t___handle_type_def_ab9552d91d6391e1b36e767bf5c127bb8}\label{struct_f_f_t___handle_type_def_ab9552d91d6391e1b36e767bf5c127bb8}} 
+\index{FFT\_HandleTypeDef@{FFT\_HandleTypeDef}!fft\_status@{fft\_status}}
+\index{fft\_status@{fft\_status}!FFT\_HandleTypeDef@{FFT\_HandleTypeDef}}
+\subsubsection{\texorpdfstring{fft\_status}{fft\_status}}
+{\footnotesize\ttfamily arm\+\_\+status fft\+\_\+status}
+
+Operation status 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Inc/\mbox{\hyperlink{ffteval_8h}{ffteval.\+h}}\end{DoxyCompactItemize}
